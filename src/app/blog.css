@@ -1,0 +1,100 @@
+:root {
+  --pre-block: #161b22;
+  --code-block: #393f48;
+}
+code,
+pre {
+  font-family: monospace !important;
+  font-size: 14px !important;
+  max-width: 100%;
+  overflow: auto;
+}
+
+pre {
+  background-color: var(--pre-block);
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+code {
+  background-color: var(--code-block);
+  width: max-content;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+pre code {
+  padding: 0;
+  background-color: inherit;
+}
+
+.blog-content {
+  animation: fadeScrollUp 0.15s;
+}
+
+.blog-content p {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.8rem;
+}
+.blog-content h1,
+.blog-content h2,
+.blog-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  --un-text-opacity: 1;
+  font-weight: 600;
+}
+.blog-content h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.blog-content h2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.blog-content h3 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.blog-content strong {
+  --un-text-opacity: 1;
+  color: #000;
+  font-weight: 500;
+  border-color: #000;
+}
+.blog-content a {
+  color: #0072f5;
+  text-decoration: underline;
+}
+.blog-content hr {
+  border-bottom-width: 0.5px;
+  --un-border-opacity: 1;
+}
+.blog-content ul {
+  list-style-type: disc;
+  list-style-position: outside;
+  padding-left: 1rem;
+}
+.blog-content ul > li {
+  margin-bottom: 0.5rem;
+}
+.blog-content img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.25rem;
+}
+.blog-content > :not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+@keyframes fadeScrollUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0.1;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
