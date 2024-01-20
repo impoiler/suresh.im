@@ -1,3 +1,4 @@
+import { externals } from "@/constant/info";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -9,7 +10,7 @@ export default function Navbar() {
         href={"/"}
         className="text-xl text-muted-foreground hover:text-white"
       >
-        suresh
+        {externals.logo_text}
       </Link>
 
       <ul className="flex gap-1 md:gap-2">

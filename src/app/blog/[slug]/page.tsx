@@ -68,6 +68,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
         <Link
           href={"/blog"}
           className="text-base font-medium text-muted-foreground  hover:text-secondary-foreground"
+          passHref
         >
           ← Back
         </Link>

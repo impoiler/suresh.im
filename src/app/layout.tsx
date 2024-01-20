@@ -1,3 +1,4 @@
+import Footer from "@/components/custom/footer";
 import Navbar from "@/components/custom/navbar";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body className={GeistSans.className + " max-w-2xl px-2 mx-auto"}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
