@@ -2,6 +2,7 @@ import Footer from "@/components/custom/footer";
 import Navbar from "@/components/custom/navbar";
 import { externals } from "@/constant/info";
 import { cn } from "@/lib/utils";
+import { Analytics } from "@vercel/analytics/react";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import "./blog.css";
@@ -36,6 +37,7 @@ export default function RootLayout({
       <body className={cn(GeistSans.className, " max-w-2xl px-2 mx-auto")}>
         <Navbar />
         {children}
+        <Analytics mode="production" />
         <Footer />
       </body>
     </html>
