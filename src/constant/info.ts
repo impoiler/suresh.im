@@ -7,6 +7,9 @@ export const externals = {
   base_url: "https://suresh.im",
   logo_text: "suresh.",
   footer_logo_text: "Suresh Chaudhary",
+  name: "suresh",
+  meta_description:
+    "Full-stack engineer Suresh Chaudhary | Crafting digital excellence with code.",
 };
 
 export const projects = [
