@@ -28,7 +28,6 @@ export async function generateMetadata({
   return {
     title,
     description,
-    metadataBase: new URL(externals.base_url),
     openGraph: {
       title,
       description,
@@ -64,7 +63,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
 
   return (
     <>
-      <nav className="flex justify-between items-center py-3.5 sticky top-0 bg-background">
+      <header className="flex justify-between items-center py-3.5 sticky top-0 bg-background">
         <Link
           href={"/blog"}
           className="text-base font-medium text-muted-foreground  hover:text-secondary-foreground"
@@ -75,7 +74,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
         <span className="text-base capitalize text-muted-foreground font-medium">
           {post.date}
         </span>
-      </nav>
+      </header>
 
       <h1 className="text-xl md:text-2xl font-medium my-8">{post.title}</h1>
 

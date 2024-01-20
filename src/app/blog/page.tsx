@@ -1,9 +1,10 @@
 import BlogRow from "@/components/custom/blog-row";
+import { externals } from "@/constant/info";
 import { allBlogs } from "contentlayer/generated";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Suresh | Blog",
+  title: `${externals.name} . blog`,
   description: "Less, but I share my thoughts here.",
 };
 
