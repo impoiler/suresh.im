@@ -39,7 +39,7 @@ export default function Home() {
       </p>
       <span className="mt-12 h-0 block" />
       <h2 className="text-lg md:text-xl font-medium">Projects</h2>
-      <span className="mt-3 h-0 block" />
+      <span className="mt-5 h-0 block" />
       <div className="grid justify-between gap-8 md:grid-cols-2">
         {projects.map((project, i) => (
           <Project {...project} key={`proj-${i}`} />

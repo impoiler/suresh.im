@@ -5,7 +5,7 @@ export default function Navbar() {
   // if (pathname.startsWith("/blog/")) return null;
 
   return (
-    <nav className="py-3 flex items-center justify-between">
+    <nav className="py-3 flex items-center justify-between sticky top-0 bg-background">
       <Link
         href={"/"}
         className="text-xl text-muted-foreground hover:text-white"
