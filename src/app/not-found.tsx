@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 export default function Error() {
   return (
     <EmptyPlaceholder
-      className={cn("border-none h-[calc(100vh_-_80px)]")}
+      className={cn("border-none h-[calc(100vh_-_100px)]")}
       title="404 | Page Not Found"
       icon={NotFound}
       description="This page has been moved or was never created."

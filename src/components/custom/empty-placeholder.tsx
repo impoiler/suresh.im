@@ -16,7 +16,7 @@ export default function EmptyPlaceholder({
   return (
     <div
       className={cn(
-        "flex h-[450px] shrink-0 mt-2 items-center justify-center rounded-md border border-dashed",
+        "flex h-[450px] shrink-0 items-center justify-center rounded-md border border-dashed",
         className
       )}
     >
