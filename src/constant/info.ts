@@ -5,6 +5,8 @@ export const externals = {
     site: "https://getmaxim.ai",
   },
   base_url: "https://suresh.im",
+  logo_text: "suresh.",
+  footer_logo_text: "Suresh Chaudhary",
 };
 
 export const projects = [
@@ -44,3 +46,12 @@ export const projects = [
     link: "https://git.suresh.im",
   },
 ];
+
+export const Links = {
+  email: "mailto:hello@suresh.im",
+  github: "https://github.com/impoiler",
+  linkedin: "https://linkedin.com/in/impoiler",
+  peerlist: "https://peerlist.io/impoiler",
+  x: "https://twitter.com/elision_ims",
+  cal: "https://cal.com/impoiler",
+};
