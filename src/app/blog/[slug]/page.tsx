@@ -1,5 +1,6 @@
 import { externals } from "@/constant/info";
 import { Blog, allBlogs } from "contentlayer/generated";
+import { ArrowLeft } from "lucide-react";
 import type { MDXComponents } from "mdx/types";
 import type { Metadata } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
@@ -48,6 +49,7 @@ export async function generateMetadata({
 // Define your custom MDX components.
 const mdxComponents: MDXComponents = {
   a: ({ href, children }) => <Link href={href as string}>{children}</Link>,
+  // pre: ({ children }) => <CustomCodeBlock>{children}</CustomCodeBlock>,
 };
 
 const PostLayout = ({ params }: { params: { slug: string } }) => {
@@ -66,21 +68,23 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
       <header className="flex justify-between items-center py-3.5 sticky top-0 bg-background">
         <Link
           href={"/blog"}
-          className="text-base font-medium text-muted-foreground  hover:text-secondary-foreground"
+          className="text-base font-medium text-muted-foreground flex items-center gap-1 hover:text-secondary-foreground"
           passHref
         >
-          ← Back
+          <ArrowLeft size={20} /> Back
         </Link>
         <span className="text-base capitalize text-muted-foreground font-medium">
           {post.date}
         </span>
       </header>
 
-      <h1 className="text-xl md:text-2xl font-medium my-8">{post.title}</h1>
+      <main className="mt-4 min-h-[calc(100vh_-_168px)]">
+        <h1 className="text-xl md:text-2xl font-medium mb-8">{post.title}</h1>
 
-      <article className="blog-content">
-        <MDXContent components={mdxComponents} />
-      </article>
+        <article className="blog-content">
+          <MDXContent components={mdxComponents} />
+        </article>
+      </main>
     </>
   );
 };

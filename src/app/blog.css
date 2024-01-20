@@ -26,6 +26,10 @@ pre code {
   background-color: inherit;
 }
 
+figure code {
+  width: auto;
+}
+
 .blog-content {
   animation: fadeScrollUp 0.15s;
 }

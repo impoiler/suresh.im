@@ -56,7 +56,9 @@ export default function Home() {
           key={blog._id}
         />
       ))}
-      {allBlogs.length > 5 && <BlogRow date="" slug="" title="All posts ↗" />}
+      {allBlogs.length > 5 && (
+        <BlogRow date="" slug="blog" title="All posts ↗" />
+      )}
     </main>
   );
 }

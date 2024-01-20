@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Blog() {
   return (
-    <main className="mt-8">
+    <main className="mt-8 min-h-[calc(100vh_-_132px)]">
       <h2 className="text-xl md:text-2xl font-medium">Blog</h2>
       <span className="mt-4 h-0 block" />
       {allBlogs.map((blog) => (
