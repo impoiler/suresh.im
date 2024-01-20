@@ -1,4 +1,4 @@
-import { SadRobot } from "@/constant/assets/icons";
+import { SadRobotIcon } from "@/constant/assets/icons";
 import { cn } from "@/lib/utils";
 import EmptyPlaceholder from "./empty-placeholder";
 
@@ -11,7 +11,7 @@ export default function SomethingWentWrong({
     <EmptyPlaceholder
       className={cn("border-none h-[600px]", className)}
       title="Something went wrong"
-      icon={SadRobot}
+      icon={SadRobotIcon}
       description={"Refresh this page or try again later."}
     />
   );
