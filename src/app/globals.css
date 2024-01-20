@@ -32,6 +32,8 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
+
+    --radius: 0.5rem;
   }
 
   .light {
@@ -62,8 +64,6 @@
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 240 10% 3.9%;
-
-    --radius: 0.5rem;
   }
 }
 
@@ -91,4 +91,33 @@ html::-webkit-scrollbar-thumb {
 
 html::-webkit-scrollbar-button {
   display: none;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip::before {
+  content: attr(aria-label);
+  color: hsl(var(--background));
+  font-size: 14px;
+  position: absolute;
+  left: 50%;
+  top: calc(-100% - 10px);
+  transform: translateX(-50%) translateY(5px);
+  opacity: 0;
+  visibility: hidden;
+  background-color: hsl(var(--foreground));
+  padding: 1px 8px;
+  font-weight: 500;
+  border-radius: 5px;
+  align-items: center;
+  transition: transform 0.3s, opacity 0.4s;
+  width: max-content;
+}
+
+.tooltip:hover::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0px);
 }
