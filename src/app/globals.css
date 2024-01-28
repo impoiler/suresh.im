@@ -80,9 +80,6 @@ html::-webkit-scrollbar {
   width: 3px;
 }
 
-html {
-  padding-right: 3px;
-}
 
 html::-webkit-scrollbar-thumb {
   width: 3px;

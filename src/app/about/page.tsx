@@ -27,11 +27,11 @@ export default function ContactPage() {
       {experiences.map((ex, index) => (
         <div className="mb-8" key={`ex-${index}`}>
           <h2 className="text-xl font-medium">{ex.companyName}</h2>
-          <p className="text-base text-muted-foreground">{ex.location}</p>
-          <div className="pl-8 positions mt-4">
+          <p className="md:text-base text-muted-foreground">{ex.location}</p>
+          <div className="md:pl-8 positions mt-4">
             {ex.positions.map((p, i) => (
               <div className="mt-4" key={`position-${i}`}>
-                <h3 className="text-lg">{p.name}</h3>
+                <h3 className="md:text-lg">{p.name}</h3>
                 <p className="text-sm text-muted-foreground">
                   {p.fromToTill} ({p.type})
                 </p>
