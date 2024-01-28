@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Developer Personal Portfolio :sparkles:
 
-## Getting Started
+This is a repo for developers and engineers, offering a quick and seamless way to construct their own minimalistic, aesthetically pleasing, and serene portfolios. My personal site, hosted on suresh.im, is an same open-source project built with Next.js 14. It's designed to work effortlessly out of the box, allowing users to customize their portfolios with a simple tweak of data in a single file.
 
-First, run the development server:
+## Features
+- :dizzy: Minimal
+- :rocket: Lightweight
+- :globe_with_meridians: Static Generation
+- :memo: Blog Included (MD Supported)
+- :technologist: Projects/Career History showcase
+- :zap: Extremely Fast (100/100 Performance Score on lighthight)
+- :mag: SEO Optimized (Link/Card Preview on Sharing)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## how to use
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can direclty clone the repo and change the `src/constant/data.ts` file to see the changes in the site.
+here are the steps to do the same 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Clone the repo
 
-## Learn More
+  ```
+  git clone https://github.com/impoiler/suresh.im.git
+  ```
+  
+ - cd into the cloned repo 
+   ```
+   cd /suresh.im
+   ```
+  
+ - Start editing as you want to.
 
-To learn more about Next.js, take a look at the following resources:
+## Important guides
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  
+ - I've used [contentlayer](https://contentlayer.dev/) for blogs, which supports mdx and static builds, so we can write blogs under the src/content/blogs directory, and it'll auto-pickup the blogs from there.
+  
+ - For link preview while sharing on social media, that's under the public folder; just replace og.png with your own [OG](https://www.freecodecamp.org/news/what-is-open-graph-and-how-can-i-use-it-for-my-website) image.  
+ 
+ - I've used pnpm as packge manager but feel free to use any as per your need
