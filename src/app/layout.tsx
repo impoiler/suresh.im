@@ -1,6 +1,6 @@
 import Footer from "@/components/custom/footer";
 import Navbar from "@/components/custom/navbar";
-import { externals } from "@/constant/info";
+import { externals } from "@/constant/data";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
 import { GeistSans } from "geist/font/sans";

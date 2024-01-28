@@ -1,5 +1,5 @@
 import BlogRow from "@/components/custom/blog-row";
-import { externals } from "@/constant/info";
+import { externals } from "@/constant/data";
 import { allBlogs } from "contentlayer/generated";
 import { Metadata } from "next";
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Blog() {
   return (
     <main className="mt-8 min-h-[calc(100vh_-_132px)]">
-      <h2 className="text-xl md:text-2xl font-medium">Blog</h2>
+      <h2 className="text-xl md:text-2xl font-medium">blog,</h2>
       <span className="mt-4 h-0 block" />
       {allBlogs.map((blog) => (
         <BlogRow

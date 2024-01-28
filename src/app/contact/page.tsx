@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Links, externals } from "@/constant/info";
+import { Links, externals } from "@/constant/data";
 import { CalendarDays } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="mt-8 h-[calc(100vh_-_132px)] ">
-      <h2 className="text-xl md:text-2xl font-medium">Say hello📧,</h2>
+    <main className="mt-8 min-h-[calc(100vh_-_132px)] ">
+      <h2 className="text-xl md:text-2xl font-medium">say hello,</h2>
       <span className="mt-5 h-0 block" />
       <p className="text-muted-foreground">
         Beyond Professional Ties: Reach out for anything from project
@@ -35,7 +35,7 @@ export default function ContactPage() {
         Or schedule a call here.
       </h2>
       <span className="mt-2 h-0 block" />
-      <Link href={Links.cal} target="_blank">
+      <Link href={Links.cal} target="_blank" className="inline-block">
         <Button className="flex items-center gap-2" variant={"secondary"}>
           <CalendarDays size={18} /> Book a call
         </Button>

@@ -1,6 +1,6 @@
 import BlogRow from "@/components/custom/blog-row";
 import Project from "@/components/custom/project";
-import { externals, projects } from "@/constant/info";
+import { externals, projects } from "@/constant/data";
 import { allBlogs } from "contentlayer/generated";
 import Link from "next/link";
 

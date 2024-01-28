@@ -1,4 +1,4 @@
-import { externals } from "@/constant/info";
+import { externals } from "@/constant/data";
 import { Blog, allBlogs } from "contentlayer/generated";
 import { ArrowLeft } from "lucide-react";
 import type { MDXComponents } from "mdx/types";
@@ -27,7 +27,7 @@ export async function generateMetadata({
   const { title, description, date, url } = post;
 
   return {
-    title,
+    title: `${title} | ${externals.name}`,
     description,
     openGraph: {
       title,
@@ -35,6 +35,7 @@ export async function generateMetadata({
       type: "article",
       publishedTime: date,
       url: `${externals.base_url}/blog/${url}`,
+      authors: externals.name,
     },
     twitter: {
       title,

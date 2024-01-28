@@ -5,7 +5,7 @@ import {
   PeerlistIcon,
   XIcon,
 } from "@/constant/assets/icons";
-import { Links, externals } from "@/constant/info";
+import { Links, externals } from "@/constant/data";
 import Link from "next/link";
 
 export default function Footer() {
@@ -54,7 +54,7 @@ export default function Footer() {
         </li>
         <li className="text-muted-foreground hover:text-white">
           <Link
-            className="flex items-center px-1 tooltip"
+            className="flex items-center pl-1 tooltip"
             href={Links.x}
             aria-label={"X/Twitter"}
           >

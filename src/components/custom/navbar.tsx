@@ -1,4 +1,4 @@
-import { externals } from "@/constant/info";
+import { externals } from "@/constant/data";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -30,7 +30,7 @@ export default function Navbar() {
           </Link>
         </li>
         <li className="text-muted-foreground hover:text-white">
-          <Link className="flex items-center px-1" href={"/contact"}>
+          <Link className="flex items-center pl-1" href={"/contact"}>
             contact
           </Link>
         </li>
