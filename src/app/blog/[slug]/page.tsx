@@ -36,7 +36,7 @@ export async function generateMetadata({
       publishedTime: date,
       url: `${externals.base_url}/blog/${url}`,
       authors: externals.name,
-      images: ["/og.png"],
+      images: [`/${url}.png`, "/og.png"],
     },
     twitter: {
       title,
