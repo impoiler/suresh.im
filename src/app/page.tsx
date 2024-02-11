@@ -1,6 +1,7 @@
 import BlogRow from "@/components/custom/blog-row";
 import Project from "@/components/custom/project";
 import { externals, projects } from "@/constant/data";
+import { parseDate } from "@/lib/utils";
 import { allBlogs } from "contentlayer/generated";
 import Link from "next/link";
 
@@ -48,14 +49,17 @@ export default function Home() {
       <span className="mt-12 h-0 block" />
       <h2 className="text-lg md:text-xl font-medium">Blogs</h2>
       <span className="mt-3 h-0 block" />
-      {allBlogs.slice(0, 5).map((blog) => (
-        <BlogRow
-          date={blog.date}
-          slug={blog.url}
-          title={blog.title}
-          key={blog._id}
-        />
-      ))}
+      {allBlogs
+        .slice(0, 5)
+        .sort((a, b) => parseDate(b.date) - parseDate(a.date))
+        .map((blog) => (
+          <BlogRow
+            date={blog.date}
+            slug={blog.url}
+            title={blog.title}
+            key={blog._id}
+          />
+        ))}
       {allBlogs.length > 5 && (
         <BlogRow date="" slug="blog" title="All posts ↗" />
       )}
