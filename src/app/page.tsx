@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="mt-8">
+    <main className="mt-8 min-h-[calc(100vh_-_132px)]">
       <h2 className="text-xl md:text-2xl font-medium">hey there👋,</h2>
       <span className="mt-5 h-0 block" />
       <p className="text-muted-foreground">
