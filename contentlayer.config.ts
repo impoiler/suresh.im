@@ -25,6 +25,12 @@ const Blog = defineDocumentType(() => ({
       description: "The description of the post",
       required: true,
     },
+    published: {
+      type: "boolean",
+      description: "The status of the post",
+      required: true,
+      default: true,
+    },
   },
   computedFields: {
     url: {

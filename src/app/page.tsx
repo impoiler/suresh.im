@@ -50,6 +50,7 @@ export default function Home() {
       <h2 className="text-lg md:text-xl font-medium">Blogs</h2>
       <span className="mt-3 h-0 block" />
       {allBlogs
+        .filter((blog) => blog.published)
         .slice(0, 5)
         .sort((a, b) => parseDate(b.date) - parseDate(a.date))
         .map((blog) => (
