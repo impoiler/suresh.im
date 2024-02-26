@@ -15,6 +15,7 @@ export default function Blog() {
       <h2 className="text-xl md:text-2xl font-medium">blog,</h2>
       <span className="mt-4 h-0 block" />
       {allBlogs
+        .filter((blog) => blog.published)
         .sort((a, b) => parseDate(b.date) - parseDate(a.date))
         .map((blog) => (
           <BlogRow
