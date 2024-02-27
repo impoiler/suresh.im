@@ -1,6 +1,8 @@
+import EmptyPlaceholder from "@/components/custom/empty-placeholder";
 import { externals } from "@/constant/data";
+import { cn } from "@/lib/utils";
 import { Blog, allBlogs } from "contentlayer/generated";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, NotebookPen } from "lucide-react";
 import type { MDXComponents } from "mdx/types";
 import type { Metadata } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
@@ -21,7 +23,7 @@ export async function generateMetadata({
   const post = allBlogs.find((post) => post._raw.flattenedPath === params.slug);
 
   if (!post) {
-    return;
+    return notFound();
   }
 
   const { title, description, date, url } = post;
@@ -61,6 +63,17 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
 
   if (!post) {
     notFound();
+  }
+
+  if (post.published === false) {
+    return (
+      <EmptyPlaceholder
+        className={cn("border-none h-[calc(100vh_-_100px)]")}
+        title="Post is not published yet."
+        icon={<NotebookPen size={50} />}
+        description={"Please check back later."}
+      />
+    );
   }
 
   const MDXContent = useMDXComponent(post.body.code);
