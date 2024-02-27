@@ -65,6 +65,8 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
     notFound();
   }
 
+  const MDXContent = useMDXComponent(post.body.code);
+
   if (post.published === false) {
     return (
       <EmptyPlaceholder
@@ -75,8 +77,6 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
       />
     );
   }
-
-  const MDXContent = useMDXComponent(post.body.code);
 
   return (
     <>
