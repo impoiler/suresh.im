@@ -1,0 +1,97 @@
+---
+title: Most Used terms in LLMs (large language models)
+description: Hey all, I'm working around LLMs recently and got to know about common model terms that are technical and not very self-explanatory. So, I thought to share them with you all.
+date: 2024-03-05
+---
+
+Hello readers, I hope you are doing well.
+
+### Quick overview of "What LLMs are?."
+
+In recent times, you may have heard a lot about LLMs in general. After the public release of GPT-3 by OpenAI, LLMs are receiving more and more attention and have become a frequent topic of discussion in the tech world.
+
+LLMs are large language models that are trained on data to perform generic or specific tasks. These models are trained on large datasets and are capable of performing various tasks such as translation, summarization, question answering, and many more.
+
+LLMs are the foundation of many AI applications that you may be using in your daily life, such as chatbots, virtual assistants, grammar correction tools, and many more. Training the model is not a cheap and easy task to do; it requires a lot of computational power and data to train the model. That's the reason why not many people/companies are coming up with their custom models.
+
+
+> If you are curious to know what actually it takes to train your model and how difficult and costly it can be, you can refer **Shaw Talebi's** video [How to Build an LLM from Scratch](https://youtu.be/ZLbVdvOoTKM?t=90)
+
+
+## Most used terms in LLMs
+
+While working with LLMs, I have come across common model terms that are technical and not very self-explanatory. Therefore, I thought it would be helpful to share them with all of you.
+
+### 1. Prompt
+
+A prompt is a piece of text/query that is used to start the conversation with the model. It's the input that you provide to the model to get the output.
+
+You may have heard about prompt engineering, which is nothing but the process of creating the best prompt/question to get the desired output from the model.
+
+> The prompt can be a question, a statement, or a command.
+
+### 2. Tokenization
+
+Tokenization is the process of breaking down a piece of text into smaller units called tokens. These tokens can be words, characters, or subwords. Tokenization is the first step in the process of converting text into a format that can be used by the model.
+
+In other words, tokenization will convert your given task/input into tokens that the model can understand and process. Now you may be wondering what a token is. A token is a single unit of text that is used as an input to the model. Tokens can be words, characters, or subwords.
+
+> approx. 1 token ~= ¾ words OR ~4 english characters ~= 1 token
+
+### 3. Max Tokens (context length)
+
+If you are working with the models or model providers' APIs, then you would have heard this model's token size (also known as context length).
+
+Max tokens are the maximum number of tokens that the model can process at a time. this includes the **input and output tokens**. if we take an example of GPT-3.5 Turbo then it's context length is ~16,385 tokens so it can process 16,385 tokens at a time.
+
+> If your input (question OR task) length is 14000, then you can only set max_tokens to ~2000 in order to obtain the output. This is because the model takes into account both input and output tokens when considering the max_tokens.
+
+### 4. Frequency Penalty
+
+Frequency Penalty is a technique used to encourage diversity in generated text by penalizing the model for repeatedly using the same words or phrases(ChatGPT's explanation).
+
+If I want to give you a non-technical definition, then it's like telling models not to use the same word multiple times in the output. This step occurs during the output decoding process, before generating the next word. It checks the previously generated text to determine what word to choose next.
+
+> This value varies from 0 to 2 (*in most cases), where 0 means no penalty and 2 means maximum penalty.
+
+### 5. Temperature
+
+
+Temperature is a hyperparameter that influences the randomness of the generated output during the sampling process.(Again, ChatGPT's explanation :)
+
+This parameter comes into picture before sampling a word by the models. This value decides the sampling pool from the dataset. If the temperature value is less, then it'll sample small data. As you would have guessed, if the sample pool is small, then the output will be more generic.
+
+>  if this value is high then the output will be more random.
+
+
+### 6. Top-K Sampling
+
+Top-K is kind of similar to the Temperature but somewhat different. It's a sampling technique that selects the top K most likely tokens from the model's output distribution and samples from those tokens.
+
+The "k" represents the number of top probability-ranked words considered during the sampling process. You can manipulate the output by adjusting this value. If the value is high, then the model will have more choices to select from, resulting in a more diverse output.
+
+### 7. Top-P Sampling
+
+**TOP-P** is very similar to **Top-K**.
+
+Few models use **Top-P** sampling instead of **Top-K** sampling. For example, OpenAI uses **Top-P** sampling; they don't have anything like **Top-K** sampling.
+
+> you can say top-k and top-p are almost same, sampling techniques
+
+### 8. Seed
+
+This is interesting. Seed is the random number that is considered as a starting point for further generations.
+
+It's very possible to get the same output of the given prompt if you use the same seed value. This is not a rule, but it can happen as the model takes it as a starting point for the generation.
+
+### 9. Stop / Stop Sequence
+
+Stop or Stop Sequence is a sequence of tokens that the model uses to determine when to stop generating the output.
+
+This is the array (sequence) or token/words that you can use to tell the model when to stop generating the output. For example, if we have the given text `[fine, you]`, then as soon as the model encounters this sequence, it will stop generating further output.
+
+> Ex. if you give **hey** as a prompt then mostly the model will generate **Hello! how i can assit you?** as the output. But if you give **hey** as a prompt and **assist** as a stop sequence then the output will be **Hello! how i can** but it will stop generating further output.
+
+Hey, I will stop here with the Stop Sequence. I will update the list as I come across more terms. Have a great day ahead!
+
+Go back [Home](/).

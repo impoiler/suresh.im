@@ -93,7 +93,15 @@ figure code {
   border-radius: 0.25rem;
 }
 
-
+.blog-content blockquote{
+  color:#617a91;
+  font-size:14px;
+  font-style: italic;
+  border-left: 3px solid #2e87e7;
+  padding: 0 20px;
+  clear: both;
+  }
+  
 @keyframes fadeScrollUp {
   from {
     transform: translateY(10px) scale(0.99);
