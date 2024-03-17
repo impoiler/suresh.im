@@ -1,4 +1,5 @@
 import EmptyPlaceholder from "@/components/custom/empty-placeholder";
+import PageView from "@/components/custom/page-view";
 import { externals } from "@/constant/data";
 import { cn } from "@/lib/utils";
 import { Blog, allBlogs } from "contentlayer/generated";
@@ -83,12 +84,13 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
       <header className="flex justify-between items-center py-3.5 sticky top-0 bg-background">
         <Link
           href={"/blog"}
-          className="text-base font-medium text-muted-foreground flex items-center gap-1 hover:text-secondary-foreground"
+          className="text-sm font-medium text-muted-foreground flex items-center gap-1 hover:text-secondary-foreground"
           passHref
         >
           <ArrowLeft size={20} /> Back
         </Link>
-        <span className="text-base capitalize text-muted-foreground font-medium">
+        <PageView slug={post.url} />
+        <span className="text-sm capitalize text-muted-foreground font-medium flex items-center">
           {post.date}
         </span>
       </header>
