@@ -18,6 +18,7 @@ export const projects = [
     description:
       "YouTube Team Collaboration, Direct Uploads, and AI Magic for Effortless Content Creation!",
     link: "https://vani.club",
+
   },
   {
     name: "tini.fyi",
@@ -35,6 +36,7 @@ export const projects = [
     description:
       "Build Free Custom Page with Multiple Links for Effortless Online Presence!",
     link: "https://section.fyi",
+    inactive: true,
   },
   {
     name: "tools",
@@ -43,10 +45,10 @@ export const projects = [
     link: "https://tools.suresh.im",
   },
   {
-    name: "gituser",
+    name: "@poiler/utils",
     description:
-      "Discover GitHub User and Organization Details with a Sleek Interface",
-    link: "https://git.suresh.im",
+      "React Hooks and Utility functions to make your life easier",
+    link: "https://www.npmjs.com/package/@poiler/utils",
   },
 ];
 
