@@ -10,12 +10,12 @@ export default function BlogRow({ slug, title, date }: BlogRowProps) {
   return (
     <Link
       href={`/${slug}`}
-      className="text-muted-foreground flex justify-between hover:text-secondary-foreground py-3 md:items-center"
+      className="text-muted-foreground flex flex-col justify-between hover:text-secondary-foreground py-3 md:flex-row gap-1"
     >
-      <h3 className="border-b-2 text-sm md:text-base max-w-[220px] md:max-w-none">
+      <h3 className="md:border-b-2 md:max-w-none">
         {title}
       </h3>
-      <span className="text-sm capitalize">{date.toLowerCase()}</span>
+      <span className="text-[15px] capitalize">{date.toLowerCase()}</span>
     </Link>
   );
 }
