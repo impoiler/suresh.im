@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { randomNumber } from "@poiler/utils";
 import WavesurferPlayer, { WavesurferProps } from "@wavesurfer/react";
-import { PauseCircleIcon, PlayCircleIcon } from "lucide-react";
+import { Loader2, PauseCircleIcon, PlayCircleIcon } from "lucide-react";
 import { useMemo, useState } from "react";
 import WaveSurfer from "wavesurfer.js";
 import Hover from "wavesurfer.js/dist/plugins/hover.esm.js";
@@ -31,10 +31,12 @@ export default function Reader(props: ReaderProps) {
   const [error, setError] = useState(false);
   const [wavesurfer, setWavesurfer] = useState<WaveSurfer | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleReady = (ws: WaveSurfer) => {
     setWavesurfer(ws);
     setIsPlaying(false);
+    setIsLoading(false);
   };
 
   const handlePlayPause = () => {
@@ -57,7 +59,9 @@ export default function Reader(props: ReaderProps) {
           variant="ghost"
           onClick={handlePlayPause}
         >
-          {isPlaying ? (
+          {isLoading ? (
+            <Loader2 size={22} className="animate-spin" />
+          ) : isPlaying ? (
             <PauseCircleIcon size={20} />
           ) : (
             <PlayCircleIcon size={20} />
