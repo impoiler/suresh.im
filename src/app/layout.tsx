@@ -34,7 +34,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(GeistSans.className, " max-w-2xl px-2 mx-auto")}>
+      <body
+        className={cn(
+          GeistSans.className,
+          "max-w-2xl px-2 mx-auto overflow-x-hidden"
+        )}
+      >
         <Navbar />
         {children}
         <Analytics mode="production" />

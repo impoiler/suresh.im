@@ -6,6 +6,7 @@ import { ArrowLeft, NotebookPen } from "lucide-react";
 import type { MDXComponents } from "mdx/types";
 import type { Metadata } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -53,7 +54,6 @@ export async function generateMetadata({
 // Define your custom MDX components.
 const mdxComponents: MDXComponents = {
   a: ({ href, children }) => <Link href={href as string}>{children}</Link>,
-  // pre: ({ children }) => <CustomCodeBlock>{children}</CustomCodeBlock>,
 };
 
 const PostLayout = ({ params }: { params: { slug: string } }) => {
@@ -78,9 +78,13 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
     );
   }
 
+  const Reader = dynamic(() => import("@/components/custom/reader"), {
+    ssr: false,
+  });
+
   return (
     <>
-      <header className="flex justify-between items-center py-3.5 sticky top-0 bg-background">
+      <header className="flex justify-between items-center py-3.5 sticky top-0 bg-background z-10">
         <Link
           href={"/blog"}
           className="text-base font-medium text-muted-foreground flex items-center gap-1 hover:text-secondary-foreground"
@@ -93,12 +97,14 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
         </span>
       </header>
 
-      <main className="mt-4 min-h-[calc(100vh_-_168px)]">
+      <main className="mt-4 min-h-[calc(100vh_-_168px)] relative">
         <h1 className="text-xl md:text-2xl font-medium mb-8">{post.title}</h1>
 
         <article className="blog-content">
           <MDXContent components={mdxComponents} />
         </article>
+
+        <Reader slug={params.slug} />
       </main>
     </>
   );
