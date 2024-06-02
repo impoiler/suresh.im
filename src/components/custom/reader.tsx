@@ -27,7 +27,8 @@ const ERROR_MESSAGES = [
 
 export default function Reader(props: ReaderProps) {
   const { slug, className } = props;
-  const audioUrl = `/blog/audio/${slug}.mp3`;
+  const BASE_STORAGE_URL = process.env.NEXT_PUBLIC_BASE_STORAGE_URL;
+  const audioUrl = `${BASE_STORAGE_URL}/${slug}/luna.mp3`;
   const [error, setError] = useState(false);
   const [wavesurfer, setWavesurfer] = useState<WaveSurfer | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -99,6 +100,7 @@ export default function Reader(props: ReaderProps) {
             }, [])}
             onError={(e) => {
               setError(true);
+              setIsLoading(false);
             }}
             {...props}
           />

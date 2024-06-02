@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     description: externals.meta_description,
     url: `${externals.base_url}`,
     images: ["/og.png"],
+    siteName: `${externals.name} . home`,
   },
   twitter: {
     title: `${externals.name} . home`,
