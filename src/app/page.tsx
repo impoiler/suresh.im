@@ -15,7 +15,7 @@ export default function Home() {
         <b className="font-normal text-secondary-foreground">
           Suresh Chaudhary,{" "}
         </b>
-        a 20 y/o fullstack engineer from{" "}
+        a fullstack engineer from{" "}
         <b className="font-normal text-secondary-foreground">India,</b> crafting
         things for the internet using the technologies I know and learn new
         stuff everyday. I mostly work with
