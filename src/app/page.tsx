@@ -36,7 +36,7 @@ export default function Home() {
             {externals.compony.name},{" "}
           </Link>
         </b>
-        buiding framework for testing and monitoring AI applications.
+        building framework for testing and monitoring AI applications.
       </p>
       <span className="mt-12 h-0 block" />
       <h2 className="text-lg md:text-xl font-medium">Projects</h2>
