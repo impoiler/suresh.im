@@ -18,7 +18,7 @@ export const projects = [
     description:
       "YouTube Team Collaboration, Direct Uploads, and AI Magic for Effortless Content Creation!",
     link: "https://vani.club",
-
+    inactive: true,
   },
   {
     name: "tini.fyi",
@@ -46,8 +46,7 @@ export const projects = [
   },
   {
     name: "@poiler/utils",
-    description:
-      "React Hooks and Utility functions to make your life easier",
+    description: "React Hooks and Utility functions to make your life easier",
     link: "https://www.npmjs.com/package/@poiler/utils",
   },
 ];
@@ -56,7 +55,7 @@ export const Links = {
   email: "mailto:hello@suresh.im",
   github: "https://github.com/impoiler",
   linkedin: "https://linkedin.com/in/impoiler",
-  peerlist: "https://peerlist.io/impoiler",
+  peerlist: "https://peerlist.io/suresh",
   x: "https://twitter.com/elision_ims",
   cal: "https://cal.com/impoiler",
 };
@@ -85,7 +84,7 @@ export const experiences = [
         fromToTill: "Jul 2023 - Jan 2024",
         type: "Full-Time",
         notes: [
-          "While serving as a Frontend Engineer at Socialwel, I proactively enhanced my skills, pushing myself to delve into full-stack engineering. My keen interest led me to explore the intricacies of the entire system, gaining insights into its end-to-end functionality.",
+          "While serving as a Frontend Engineer at Socialwell, I proactively enhanced my skills, pushing myself to delve into full-stack engineering. My keen interest led me to explore the intricacies of the entire system, gaining insights into its end-to-end functionality.",
           "To achieve this objective, I immersed myself in learning backend technologies like APIs, GraphQL, Protocols, Databases, and Status. Following a dedicated period of learning and practical application, I was honored with a promotion to the position of a full-stack engineer.",
         ],
       },
