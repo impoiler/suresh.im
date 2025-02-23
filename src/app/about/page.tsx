@@ -1,5 +1,4 @@
 import { experiences, externals } from "@/constant/data";
-import { cn } from "@/lib/utils";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,51 +7,62 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="mt-8 min-h-[calc(100vh_-_132px)] ">
-      <h2 className="text-xl md:text-2xl font-medium">work,</h2>
-      <span className="mt-5 h-0 block" />
-      <p className="text-muted-foreground">
-        I&apos;m a software engineer aspiring to make a mark in the world of
-        internet builders. My focus is on creating solutions that solve
-        real-life problems, whether working{" "}
-        <b className="font-normal text-secondary-foreground">
-          {" "}
-          collaboratively
-        </b>{" "}
-        or{" "}
-        <b className="font-normal text-secondary-foreground">independently.</b>
-      </p>
-      <span className="mt-12 h-0 block" />
+    <main className="py-8 min-h-[calc(100vh_-_132px)]">
+      <div className="max-w-2xl mx-auto">
+        <h2 className="text-xl md:text-2xl font-medium">work,</h2>
 
-      {experiences.map((ex, index) => (
-        <div className="mb-8" key={`ex-${index}`}>
-          <h2 className="text-xl font-medium">{ex.companyName}</h2>
-          <p className="md:text-base text-muted-foreground">{ex.location}</p>
-          <div className="md:pl-8 positions mt-4">
-            {ex.positions.map((p, i) => (
-              <div className="mt-4" key={`position-${i}`}>
-                <h3 className="md:text-lg">{p.name}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {p.fromToTill} ({p.type})
-                </p>
-                {p.notes &&
-                  p.notes.length > 0 &&
-                  p.notes.map((note, ii) => (
-                    <p
-                      key={`note-${ii}`}
-                      className={cn(
-                        "text-sm mt-3 list-item ml-3 text-muted-foreground",
-                        i > 0 && ""
-                      )}
-                    >
-                      {note}
-                    </p>
-                  ))}
+        <p className="mt-5 text-muted-foreground">
+          I&apos;m a software engineer aspiring to make a mark in the world of
+          internet builders. My focus is on creating solutions that solve
+          real-life problems, whether working{" "}
+          <span className="text-foreground">collaboratively</span> or{" "}
+          <span className="text-foreground">independently</span>.
+        </p>
+
+        <div className="mt-10 space-y-10">
+          {experiences.map((ex, index) => (
+            <div key={`ex-${index}`} className="group">
+              <div className="flex items-baseline justify-between">
+                <h3 className="text-lg font-medium group-hover:text-primary transition-colors">
+                  {ex.companyName}
+                </h3>
+                <p className="text-sm text-muted-foreground">{ex.location}</p>
               </div>
-            ))}
-          </div>
+
+              <div className="mt-3 pl-4 space-y-8">
+                {ex.positions.map((p, i) => (
+                  <div key={`position-${i}`} className="group/position">
+                    <div className="flex items-baseline justify-between">
+                      <h4 className="text-base group-hover/position:text-primary transition-colors">
+                        {p.name}
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        {p.fromToTill}
+                      </p>
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {p.type}
+                    </p>
+
+                    {p.notes && p.notes.length > 0 && (
+                      <ul className="mt-4 space-y-2">
+                        {p.notes.map((note, ii) => (
+                          <li
+                            key={`note-${ii}`}
+                            className="text-sm text-muted-foreground/80 hover:text-muted-foreground transition-colors"
+                          >
+                            {note}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </main>
   );
 }
