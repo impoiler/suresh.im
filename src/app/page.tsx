@@ -42,7 +42,7 @@ export default function Home() {
       <h2 className="text-lg md:text-xl font-medium">Projects</h2>
       <span className="mt-5 h-0 block" />
       <div className="grid justify-between gap-8 md:grid-cols-2">
-        {projects.map((project, i) => (
+        {projects.sort((a, b) => (a.inactive === b.inactive ? 0 : a.inactive ? 1 : -1)).map((project, i) => (
           <Project {...project} key={`proj-${i}`} />
         ))}
       </div>
