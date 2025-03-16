@@ -94,7 +94,17 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
       <h1 className="post-title font-semibold">{post.title}</h1>
 
       <article className="blog-content">
-        <MDXContent components={mdxComponents} />
+        <MDXContent
+          components={{
+            ...mdxComponents,
+            a: ({ href, children }) =>
+              href?.startsWith("http") ? (
+                <a href={`${href}?ref=${externals.referrer}`} target="_blank">{children}</a>
+              ) : (
+                <Link href={href as string}>{children}</Link>
+              ),
+          }}
+        />
       </article>
     </div>
   );

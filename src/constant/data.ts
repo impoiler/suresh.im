@@ -8,6 +8,7 @@ export const externals = {
   logo_text: "suresh.",
   footer_logo_text: "Suresh Chaudhary",
   name: "suresh",
+  referrer: "suresh.im",
   meta_description:
     "Full-stack engineer Suresh Chaudhary | Crafting digital excellence with code.",
 };
