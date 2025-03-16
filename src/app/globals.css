@@ -11,7 +11,6 @@
     --secondary: 0 0% 53%;
     --tertiary: 0 0% 9%;
 
-
     &[data-theme="dark"] {
       --background: 0 0% 10%;
       --foreground: 0 0% 93%;
@@ -88,4 +87,18 @@ a.out::after {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0px);
+}
+.blog-articles a,
+.projects li {
+  transition: opacity 0.3s;
+}
+
+.blog-articles:hover a,
+.projects:hover li {
+  opacity: 0.4;
+}
+
+.blog-articles a:hover,
+.projects li:hover {
+  opacity: 1;
 }

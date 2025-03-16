@@ -81,17 +81,17 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
       <header className="flex text-secondary justify-between items-center py-3 sticky top-0 bg-background">
         <Link
           href={"/blog"}
-          className="text-sm font-newsreader italic font-medium text-muted-foreground flex items-center gap-1 hover:text-secondary-foreground"
+          className="text-sm font-newsreader italic font-medium flex items-start gap-1"
           passHref
         >
           <ArrowLeft size={16} /> Back
         </Link>
-        <span className="text-sm capitalize text-muted-foreground italic font-newsreader font-medium">
+        <span className="text-sm capitalize italic font-newsreader font-medium">
           {post.date}
         </span>
       </header>
 
-      <h1 className="text-xl md:text-2xl font-medium mb-8">{post.title}</h1>
+      <h1 className="post-title font-semibold">{post.title}</h1>
 
       <article className="blog-content">
         <MDXContent components={mdxComponents} />

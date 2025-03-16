@@ -18,7 +18,7 @@ export default function Home() {
           fullstack engineer
         </span>{" "}
         from India, crafting things for the internet using the technologies I
-        know and learn new stuff everyday.
+        know. I&apos;m very much focused on AI and LLMs nowadays.
       </p>
 
       <p className="text-sm text-secondary animate-reveal mt-4">
@@ -38,7 +38,7 @@ export default function Home() {
         <div>
           <p className="font-newsreader font-medium italic text-lg">projects</p>
           <div className="mt-3">
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col projects gap-3">
               {projects.slice(0, 5).map((project) => (
                 <Project key={project.name} {...project} />
               ))}
@@ -53,7 +53,7 @@ export default function Home() {
         <div>
           <p className="font-newsreader font-medium italic text-lg">thoughts</p>
           <div className="mt-3">
-            <ul className="flex flex-col gap-3">
+            <ul className="blog-articles flex flex-col gap-3">
               {posts.slice(0, 4).map((blog) => (
                 <BlogRow key={blog._id} {...blog} />
               ))}

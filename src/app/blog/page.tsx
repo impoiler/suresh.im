@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description: "Less, but I share my thoughts here.",
 };
 
-export default function Blog() {
+export default function BlogPage() {
   const posts = allBlogs
     .filter((blog) => blog.published)
     .sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
   return (
-    <div className="mt-10 animate-reveal">
+    <div className="mt-10 animate-reveal blog-articles">
       <p className="font-newsreader font-medium italic text-lg">thoughts</p>
       <div className="mt-2">
         <ul className="flex flex-col gap-3">
