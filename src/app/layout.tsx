@@ -40,10 +40,10 @@ export default async function RootLayout({
   const theme = (await cookies()).get("theme")?.value;
 
   return (
-    <html lang="en" data-theme={theme}>
+    <html lang="en" data-theme={theme ?? "light"}>
       <body className={`${newsreader.variable} antialiased py-8 px-4`}>
         <div
-          className={`max-w-2xl mx-auto py-8 px-4 ${GeistSans.variable} ${GeistMono.variable} font-[family-name:var(--font-geist-sans)]`}
+          className={`max-w-2xl mx-auto ${GeistSans.variable} ${GeistMono.variable} font-[family-name:var(--font-geist-sans)]`}
         >
           <Navbar />
           {children}

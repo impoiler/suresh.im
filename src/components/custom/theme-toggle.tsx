@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
+import { useRouter } from "next/navigation";
 
 export default function ThemeToggle() {
+  const router = useRouter();
   const setTheme = () => {
     const theme = document.cookie
       .split(";")
@@ -11,8 +12,14 @@ export default function ThemeToggle() {
       ?.split("=")[1];
 
     document.cookie = `theme=${theme === "dark" ? "light" : "dark"}; path=/`;
-    window.location.reload();
+    router.refresh();
   };
 
-  return <button className="w-2 h-2 bg-primary rounded-full" onClick={setTheme}></button>;
+  return (
+    <button
+      aria-label="toggle theme"
+      className="tooltip w-2 h-2 bg-primary rounded-full"
+      onClick={setTheme}
+    ></button>
+  );
 }
