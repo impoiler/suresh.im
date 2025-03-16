@@ -1,5 +1,6 @@
 import { allBlogs } from "contentlayer/generated";
-import Link from "next/link";
+import Link from "./link";
+;
 
 export default function BlogRow(blog: (typeof allBlogs)[0]) {
   return (

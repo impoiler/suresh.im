@@ -1,7 +1,7 @@
+import Link from "@/components/custom/link";
 import { Links, externals } from "@/constant/data";
 import { CalendarDays } from "lucide-react";
 import { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: `${externals.name} . contact`,

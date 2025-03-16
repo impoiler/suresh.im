@@ -10,14 +10,14 @@
     --primary: 0 0% 9%;
     --secondary: 0 0% 53%;
     --tertiary: 0 0% 9%;
+  }
 
-    &[data-theme="dark"] {
-      --background: 0 0% 10%;
-      --foreground: 0 0% 93%;
-      --primary: 0 0% 93%;
-      --secondary: 0 0% 53%;
-      --tertiary: 0 0% 93%;
-    }
+  :root[data-theme="dark"] {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 93%;
+    --primary: 0 0% 93%;
+    --secondary: 0 0% 53%;
+    --tertiary: 0 0% 93%;
   }
 }
 

@@ -1,9 +1,9 @@
 import BlogRow from "@/components/custom/blog-row";
+import Link from "@/components/custom/link";
 import Project from "@/components/custom/project";
 import { externals, projects } from "@/constant/data";
 import { parseDate } from "@/lib/utils";
 import { allBlogs } from "contentlayer/generated";
-import Link from "next/link";
 
 export default function Home() {
   const posts = allBlogs

@@ -1,6 +1,6 @@
 import { Links } from "@/constant/data";
-import Link from "next/link";
 import AnimatedText from "./animated-text";
+import Link from "./link";
 import ThemeToggle from "./theme-toggle";
 
 export default function Navbar() {

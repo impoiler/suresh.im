@@ -1,11 +1,11 @@
 import EmptyPlaceholder from "@/components/custom/empty-placeholder";
+import Link from "@/components/custom/link";
 import { externals } from "@/constant/data";
 import { Blog, allBlogs } from "contentlayer/generated";
 import { ArrowLeft, NotebookPen } from "lucide-react";
 import type { MDXComponents } from "mdx/types";
 import type { Metadata } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
