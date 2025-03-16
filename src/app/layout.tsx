@@ -1,12 +1,17 @@
-import Footer from "@/components/custom/footer";
 import Navbar from "@/components/custom/navbar";
 import { externals } from "@/constant/data";
-import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
+import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
-import "./blog.css";
+import { Newsreader } from "next/font/google";
+import { cookies } from "next/headers";
 import "./globals.css";
+
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: `${externals.name} . home`,
@@ -27,18 +32,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
+  const theme = (await cookies()).get("theme")?.value;
+
   return (
-    <html lang="en">
-      <body className={cn(GeistSans.className, " max-w-2xl px-2 mx-auto")}>
-        <Navbar />
-        {children}
-        <Analytics mode="production" />
-        <Footer />
+    <html lang="en" data-theme={theme}>
+      <body className={`${newsreader.variable} antialiased`}>
+        <div
+          className={`max-w-2xl mx-auto p-8 ${GeistSans.variable} ${GeistMono.variable} font-[family-name:var(--font-geist-sans)]`}
+        >
+          <Navbar />
+          {children}
+          <Analytics mode="production" />
+        </div>
       </body>
     </html>
   );

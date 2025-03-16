@@ -1,14 +1,16 @@
 import { projects } from "@/constant/data";
+import React from "react";
 
 export default function Project(project: (typeof projects)[0]) {
   return (
-    <li key={project.name} className="flex flex-col">
+    <li key={project.name}>
       <a
         href={project.link}
         target="_blank"
-        className="text-sm out font-medium w-max"
+        className="text-sm out font-medium"
       >
         {project.name}
+
         {project.inactive && (
           <span className="text-secondary"> (inactive)</span>
         )}

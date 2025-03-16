@@ -1,6 +1,5 @@
 import EmptyPlaceholder from "@/components/custom/empty-placeholder";
 import { externals } from "@/constant/data";
-import { cn } from "@/lib/utils";
 import { Blog, allBlogs } from "contentlayer/generated";
 import { ArrowLeft, NotebookPen } from "lucide-react";
 import type { MDXComponents } from "mdx/types";
@@ -70,7 +69,6 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
   if (post.published === false) {
     return (
       <EmptyPlaceholder
-        className={cn("border-none h-[calc(100vh_-_100px)]")}
         title="Post is not published yet."
         icon={<NotebookPen size={50} />}
         description={"Please check back later."}
@@ -79,28 +77,26 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
   }
 
   return (
-    <>
-      <header className="flex justify-between items-center py-3.5 sticky top-0 bg-background">
+    <div className="mt-7 animate-reveal">
+      <header className="flex text-secondary justify-between items-center py-3 sticky top-0 bg-background">
         <Link
           href={"/blog"}
-          className="text-base font-medium text-muted-foreground flex items-center gap-1 hover:text-secondary-foreground"
+          className="text-sm font-newsreader italic font-medium text-muted-foreground flex items-center gap-1 hover:text-secondary-foreground"
           passHref
         >
-          <ArrowLeft size={20} /> Back
+          <ArrowLeft size={16} /> Back
         </Link>
-        <span className="text-base capitalize text-muted-foreground font-medium">
+        <span className="text-sm capitalize text-muted-foreground italic font-newsreader font-medium">
           {post.date}
         </span>
       </header>
 
-      <main className="mt-4 min-h-[calc(100vh_-_168px)]">
-        <h1 className="text-xl md:text-2xl font-medium mb-8">{post.title}</h1>
+      <h1 className="text-xl md:text-2xl font-medium mb-8">{post.title}</h1>
 
-        <article className="blog-content">
-          <MDXContent components={mdxComponents} />
-        </article>
-      </main>
-    </>
+      <article className="blog-content">
+        <MDXContent components={mdxComponents} />
+      </article>
+    </div>
   );
 };
 

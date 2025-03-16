@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        newsreader: "var(--font-newsreader)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -67,10 +70,22 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+
+        "text-animate": {
+          "0%": { opacity: "0", transform: "translateY(5px)" },
+          "50%": { opacity: "1", transform: "translateY(0)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        reveal: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        text: "text-animate",
+        reveal: "reveal 0.3s",
       },
     },
   },

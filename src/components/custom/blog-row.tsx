@@ -1,21 +1,15 @@
+import { allBlogs } from "contentlayer/generated";
 import Link from "next/link";
 
-interface BlogRowProps {
-  title: string;
-  slug: string;
-  date: string;
-}
-
-export default function BlogRow({ slug, title, date }: BlogRowProps) {
+export default function BlogRow(blog: (typeof allBlogs)[0]) {
   return (
-    <Link
-      href={`/${slug}`}
-      className="text-muted-foreground flex flex-col justify-between hover:text-secondary-foreground py-3 md:flex-row gap-1"
-    >
-      <h3 className="md:border-b-2 md:max-w-none">
-        {title}
-      </h3>
-      <span className="text-[15px] capitalize">{date.toLowerCase()}</span>
+    <Link href={`/${blog.url}`} className="text-sm font-medium">
+      <li className="flex flex-col">
+        <h3 className="">{blog.title}</h3>
+        <span className="text-secondary text-xs">
+          {blog.date.toLowerCase()}
+        </span>
+      </li>
     </Link>
   );
 }

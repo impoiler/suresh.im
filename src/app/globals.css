@@ -4,82 +4,33 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-
-    --foreground: 0 0% 98%;
-
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-
-    --radius: 0.5rem;
-  }
-
-  .light {
     --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --foreground: 0 0% 9%;
+    --radius: 0.5rem;
+    --primary: 0 0% 9%;
+    --secondary: 0 0% 53%;
+    --tertiary: 0 0% 9%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
+    &[data-theme="dark"] {
+      --background: 0 0% 10%;
+      --foreground: 0 0% 93%;
+      --primary: 0 0% 93%;
+      --secondary: 0 0% 53%;
+      --tertiary: 0 0% 93%;
+    }
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  transition: background-color 0.3s, color 0.3s;
 }
 
 html::-webkit-scrollbar {
   width: 3px;
 }
-
 
 html::-webkit-scrollbar-thumb {
   width: 3px;
@@ -88,6 +39,26 @@ html::-webkit-scrollbar-thumb {
 
 html::-webkit-scrollbar-button {
   display: none;
+}
+
+a.out {
+  position: relative;
+  text-decoration: none;
+  margin-right: 14px;
+}
+
+a.out::after {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  margin-left: 2px;
+  transform: translateY(-50%) rotate(-45deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m12 5 7 7-7 7'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .tooltip {
