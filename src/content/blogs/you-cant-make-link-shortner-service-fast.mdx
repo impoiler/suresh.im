@@ -1,0 +1,83 @@
+---
+title: Why Link Shortener Services Can’t Be Made Faster
+description: Understanding why link shortener services face inherent speed constraints and what we can do about it
+date: 2024-05-25
+published: true
+---
+
+Hey folks 👋,
+
+I'd like to share some learnings from my experience with [tini.fyi](https://tini.fyi), a link shortener service I built as a side project about 1.5 years ago. The project has gained some traction, with users actively sharing it on social media, which motivated me to keep the domain active and improve the service.
+
+### Recent Improvements
+
+Last weekend, I focused on making the service more reliable and robust with two main goals:
+
+- Faster redirection
+- Better handling of peak traffic
+
+The reliability aspect was addressed through implementations like IP rate limiting to prevent system abuse and maintain a consistent user experience.
+
+### Understanding Link Shortener Performance
+
+Let's dive into how link shorteners work technically:
+
+When you provide a long URL, the service generates a shortened version that you can share. When someone clicks the shortened link, they're redirected to the original URL. Some services offer additional features like link tracking and analytics.
+
+### Technical Process
+
+- User clicks the shortened link
+- Request goes to the server
+- Server looks up the corresponding long URL
+- Server responds with:
+
+- HTTP location header with the target URL
+- 3xx status code
+
+- Browser handles the actual redirection
+
+### The Speed Limitation
+
+Here's why there's a natural speed limit to link shortener services:
+
+Using [tini.fyi](https://tini.fyi) as an example, when a user clicks a shortened link:
+
+- The request hits the tini service
+- The service looks up the corresponding long URL
+- It returns the appropriate headers and status code
+- The browser initiates the redirect to the target site
+- The URL bar continues showing the shortened link until receiving the first byte from the target site
+
+This means that while users might blame the link shortener for slow loading, the actual bottleneck is often the target site's response time.
+
+### Benchmarking
+
+I conducted speed comparison tests between two different methods and here's how they work:
+
+- The do-follow method waits for the target site to respond before measuring the performance
+- The no-follow method only depends on the [tini.fyi](https://tini.fyi) service's response
+
+### Test Results:
+
+- Using the no-follow redirection method:
+
+- Average response time: 1.3 seconds
+- Fastest one was 0.06 second
+
+- Using the do-follow method:
+
+- Average response time: 2.99 seconds
+- Fastest one was 1.05 second
+
+![Speed comparison graph](/blog/tini-fyi-benchmarking.png)
+
+### Possible Solutions
+
+There are two main approaches to optimize performance:
+
+- Minimize the link shortener's response time to reduce overall redirect time
+- Implement an intermediate landing page for redirection, but it has no actual value.
+
+![Redirecting to](/blog/redirecting-to.png)
+
+These optimizations can help, but they can't overcome the fundamental limitation of waiting for the target site's response.
