@@ -1,7 +1,5 @@
 import { allBlogs } from "contentlayer/generated";
 import Link from "./link";
-;
-
 export default function BlogRow(blog: (typeof allBlogs)[0]) {
   return (
     <Link href={`/${blog.url}`} className="text-sm font-medium">

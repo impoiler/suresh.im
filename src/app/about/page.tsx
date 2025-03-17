@@ -31,16 +31,16 @@ export default function AboutPage() {
 
               <div className="mt-3 pl-4 space-y-8 relative before:absolute before:left-0 before:top-0 before:h-full before:w-[1px] before:bg-border">
                 {ex.positions.map((p, i) => (
-                  <div key={`position-${i}`} className="group/position relative before:absolute before:w-3 before:h-[1px] before:-left-4 before:top-3 before:bg-border">
+                  <div
+                    key={`position-${i}`}
+                    className="group/position relative before:absolute before:w-3 before:h-[1px] before:-left-4 before:top-3 before:bg-border"
+                  >
                     <div className="flex items-baseline justify-between">
                       <h4 className="text-md group-hover/position:text-primary transition-colors">
                         {p.name} ({p.type})
                       </h4>
-                      <p className="text-sm text-foreground">
-                        {p.fromToTill}
-                      </p>
+                      <p className="text-sm text-foreground">{p.fromToTill}</p>
                     </div>
-                   
 
                     {p.notes && p.notes.length > 0 && (
                       <ul className="mt-4 space-y-2">

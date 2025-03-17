@@ -14,9 +14,7 @@ LLMs are large language models that are trained on data to perform generic or sp
 
 This models are the foundation of many AI applications that you may be using in your daily life, such as chatbots, virtual assistants, grammar correction tools, and many more. Training the model is not a cheap and easy task to do; it requires a lot of computational power and data to train the model. That's the reason why not many people/companies are coming up with their custom models.
 
-
 > If you are curious to know what actually it takes to train your model and how difficult and costly it can be, you can refer **Shaw Talebi's** video [How to Build an LLM from Scratch](https://youtu.be/ZLbVdvOoTKM?t=90)
-
 
 ## Most used terms in LLMs
 
@@ -52,17 +50,15 @@ Frequency Penalty is a technique used to encourage diversity in generated text b
 
 If I want to give you a non-technical definition, then it's like telling models not to use the same word multiple times in the output. This step occurs during the output decoding process, before generating the next word. It checks the previously generated text to determine what word to choose next.
 
-> This value varies from 0 to 2 (*in most cases), where 0 means no penalty and 2 means maximum penalty.
+> This value varies from 0 to 2 (\*in most cases), where 0 means no penalty and 2 means maximum penalty.
 
 ### 5. Temperature
-
 
 Temperature is a hyperparameter that influences the randomness of the generated output during the sampling process.(Again, ChatGPT's explanation :)
 
 This parameter comes into picture before sampling a word by the models. This value decides the sampling pool from the dataset. If the temperature value is less, then it'll sample small data. As you would have guessed, if the sample pool is small, then the output will be more generic.
 
->  if this value is high then the output will be more random.
-
+> if this value is high then the output will be more random.
 
 ### 6. Top-K Sampling
 

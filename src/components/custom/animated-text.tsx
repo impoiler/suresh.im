@@ -19,7 +19,7 @@ export default function AnimatedText({ text, ...props }: AnimatedTextProps) {
           className="animate-text"
           key={index}
           style={{
-            animationDuration: `${(index + 1) * 100}ms`,
+            animationDuration: `${(index + 1) * 150}ms`,
             ...(char.trim() === "" && {
               width: `${char.length * 0.25}em`,
               display: "inline-block",

@@ -4,10 +4,20 @@ import { AnchorHTMLAttributes } from "react";
 
 export default function Link({
   ...props
-}: LinkProps & { children: React.ReactNode } & AnchorHTMLAttributes<HTMLAnchorElement>) {
+}: LinkProps & {
+  children: React.ReactNode;
+} & AnchorHTMLAttributes<HTMLAnchorElement>) {
   let { href, ...rest } = props;
-  if(href?.startsWith("http")) {
-    return <a {...rest} href={`${href}?ref=${externals.referrer}`} target="_blank">{props.children}</a>;
+  if (href?.startsWith("http")) {
+    return (
+      <a {...rest} href={`${href}?ref=${externals.referrer}`} target="_blank">
+        {props.children}
+      </a>
+    );
   }
-  return <NextLink {...rest} href={href}>{props.children}</NextLink>;
+  return (
+    <NextLink {...rest} href={href}>
+      {props.children}
+    </NextLink>
+  );
 }

@@ -91,20 +91,3 @@ a.out::after {
   visibility: visible;
   transform: translateX(-50%) translateY(0px);
 }
-
-@media (min-width: 768px) {
-  .blog-articles a,
-  .projects li {
-    transition: opacity 0.3s;
-  }
-
-  .blog-articles:hover a,
-  .projects:hover li {
-    opacity: 0.4;
-  }
-
-  .blog-articles a:hover,
-  .projects li:hover {
-    opacity: 1;
-  }
-}

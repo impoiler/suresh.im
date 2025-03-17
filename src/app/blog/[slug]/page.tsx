@@ -99,7 +99,9 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
             ...mdxComponents,
             a: ({ href, children }) =>
               href?.startsWith("http") ? (
-                <a href={`${href}?ref=${externals.referrer}`} target="_blank">{children}</a>
+                <a href={`${href}?ref=${externals.referrer}`} target="_blank">
+                  {children}
+                </a>
               ) : (
                 <Link href={href as string}>{children}</Link>
               ),

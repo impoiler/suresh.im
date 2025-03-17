@@ -85,7 +85,7 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         text: "text-animate",
-        reveal: "reveal 0.3s",
+        reveal: "reveal 0.7s",
       },
     },
   },

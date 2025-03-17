@@ -34,7 +34,11 @@ export default function ContactPage() {
         Or schedule a call here.
       </h2>
       <span className="mt-2 h-0 block" />
-      <Link href={Links.cal} target="_blank" className="text-md font-newsreader italic flex items-start gap-2">
+      <Link
+        href={Links.cal}
+        target="_blank"
+        className="text-md font-newsreader italic flex items-start gap-2"
+      >
         <CalendarDays size={18} /> Book a call
       </Link>
     </main>
