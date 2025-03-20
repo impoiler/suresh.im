@@ -10,7 +10,7 @@ export const externals = {
   name: "suresh",
   referrer: "suresh.im",
   meta_description:
-    "Full-stack engineer Suresh Chaudhary | Crafting digital excellence with code.",
+    "Fullstack engineer Suresh Chaudhary | Crafting digital excellence with code.",
 };
 
 export const projects = [

@@ -13,25 +13,24 @@ export default function Home() {
   return (
     <>
       <p className="text-sm animate-reveal text-secondary mt-10">
-        I&apos;m{" "}
+        I&apos;m a{" "}
         <span className="font-newsreader text-primary font-medium italic">
           fullstack engineer
         </span>{" "}
         from India, crafting things for the internet using the technologies I
-        know. I&apos;m very much focused on AI and LLMs nowadays.
+        know. I&apos;m currently very focused on AI and LLMs.
       </p>
 
       <p className="text-sm text-secondary animate-reveal mt-4">
-        Presently I&apos;m working at{" "}
+        Presently, I&apos;m working at{" "}
         <Link
           target="_blank"
           href={externals.compony.site}
           className="font-newsreader text-primary out font-medium italic"
         >
-          {" "}
           {externals.compony.name}{" "}
         </Link>
-        , building framework for testing and monitoring AI applications.
+        , building a framework for testing and monitoring AI applications.
       </p>
 
       <div className="flex flex-col gap-10 mt-10 animate-reveal">
