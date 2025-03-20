@@ -9,22 +9,21 @@ export const metadata: Metadata = {
   description: "Less, but I share my thoughts here.",
 };
 
-export default function Blog() {
+export default function BlogPage() {
+  const posts = allBlogs
+    .filter((blog) => blog.published)
+    .sort((a, b) => parseDate(b.date) - parseDate(a.date));
+
   return (
-    <main className="mt-8 min-h-[calc(100vh_-_132px)]">
-      <h2 className="text-xl md:text-2xl font-medium">blog,</h2>
-      <span className="mt-4 h-0 block" />
-      {allBlogs
-        .filter((blog) => blog.published)
-        .sort((a, b) => parseDate(b.date) - parseDate(a.date))
-        .map((blog) => (
-          <BlogRow
-            date={blog.date}
-            slug={blog.url}
-            title={blog.title}
-            key={blog._id}
-          />
-        ))}
-    </main>
+    <div className="mt-10 animate-reveal blog-articles">
+      <p className="font-newsreader font-medium italic text-lg">thoughts</p>
+      <div className="mt-2">
+        <ul className="flex flex-col gap-3">
+          {posts.map((blog) => (
+            <BlogRow key={blog._id} {...blog} />
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 }

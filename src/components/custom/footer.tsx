@@ -6,7 +6,7 @@ import {
   XIcon,
 } from "@/constant/assets/icons";
 import { Links, externals } from "@/constant/data";
-import Link from "next/link";
+import Link from "./link";
 
 export default function Footer() {
   return (

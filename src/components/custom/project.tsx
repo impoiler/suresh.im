@@ -1,25 +1,16 @@
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { Badge } from "../ui/badge";
+import { projects } from "@/constant/data";
+import Link from "./link";
 
-interface ProjectProps {
-  name: string;
-  description: string;
-  link: string;
-  inactive?: boolean;
-}
-
-export default function Project({ description, link, name,inactive }: ProjectProps) {
+export default function Project(project: (typeof projects)[0]) {
   return (
-    <div className="">
-      <h3 className="text-base flex items-center gap-1">
-        <Link href={link} className={cn("border-b-2 w-max",{
-          "line-through": inactive,
-        })}>{name}</Link>
-        {inactive && <Badge className="text-xs font-medium">Inactive</Badge>}
-      </h3>
-      <span className="mt-2 h-0 block" />
-      <p className="text-sm text-muted-foreground">{description}</p>
-    </div>
+    <li key={project.name} className="flex flex-col">
+      <Link href={project.link} className="text-sm out font-medium">
+        {project.name}
+        {project.inactive && (
+          <span className="text-secondary"> (inactive)</span>
+        )}
+      </Link>
+      <p className="text-xs text-secondary">{project.description}</p>
+    </li>
   );
 }

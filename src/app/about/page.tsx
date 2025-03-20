@@ -5,51 +5,49 @@ export const metadata: Metadata = {
   title: `${externals.name} . about`,
 };
 
-export default function ContactPage() {
+export default function AboutPage() {
   return (
-    <main className="py-8 min-h-[calc(100vh_-_132px)]">
+    <main className="mt-10">
       <div className="max-w-2xl mx-auto">
-        <h2 className="text-xl md:text-2xl font-medium">work,</h2>
+        <h2 className="text-lg font-medium font-newsreader italic">work,</h2>
 
-        <p className="mt-5 text-muted-foreground">
+        <p className="mt-5 text-foreground text-sm">
           I&apos;m a software engineer aspiring to make a mark in the world of
           internet builders. My focus is on creating solutions that solve
           real-life problems, whether working{" "}
-          <span className="text-foreground">collaboratively</span> or{" "}
-          <span className="text-foreground">independently</span>.
+          <span className="font-newsreader italic">collaboratively</span> or{" "}
+          <span className="font-newsreader italic">independently</span>.
         </p>
 
         <div className="mt-10 space-y-10">
           {experiences.map((ex, index) => (
             <div key={`ex-${index}`} className="group">
               <div className="flex items-baseline justify-between">
-                <h3 className="text-lg font-medium group-hover:text-primary transition-colors">
+                <h3 className="text-lg font-semibold transition-colors">
                   {ex.companyName}
                 </h3>
-                <p className="text-sm text-muted-foreground">{ex.location}</p>
+                <p className="text-sm text-foreground">{ex.location}</p>
               </div>
 
               <div className="mt-3 pl-4 space-y-8 relative before:absolute before:left-0 before:top-0 before:h-full before:w-[1px] before:bg-border">
                 {ex.positions.map((p, i) => (
-                  <div key={`position-${i}`} className="group/position relative before:absolute before:w-3 before:h-[1px] before:-left-4 before:top-3 before:bg-border">
+                  <div
+                    key={`position-${i}`}
+                    className="group/position relative before:absolute before:w-3 before:h-[1px] before:-left-4 before:top-3 before:bg-border"
+                  >
                     <div className="flex items-baseline justify-between">
-                      <h4 className="text-base group-hover/position:text-primary transition-colors">
-                        {p.name}
+                      <h4 className="text-md group-hover/position:text-primary transition-colors">
+                        {p.name} ({p.type})
                       </h4>
-                      <p className="text-sm text-muted-foreground">
-                        {p.fromToTill}
-                      </p>
+                      <p className="text-sm text-foreground">{p.fromToTill}</p>
                     </div>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {p.type}
-                    </p>
 
                     {p.notes && p.notes.length > 0 && (
                       <ul className="mt-4 space-y-2">
                         {p.notes.map((note, ii) => (
                           <li
                             key={`note-${ii}`}
-                            className="text-sm text-muted-foreground/80 hover:text-muted-foreground transition-colors"
+                            className="text-sm text-secondary"
                           >
                             {note}
                           </li>

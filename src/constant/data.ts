@@ -8,46 +8,52 @@ export const externals = {
   logo_text: "suresh.",
   footer_logo_text: "Suresh Chaudhary",
   name: "suresh",
+  referrer: "suresh.im",
   meta_description:
-    "Full-stack engineer Suresh Chaudhary | Crafting digital excellence with code.",
+    "Fullstack engineer Suresh Chaudhary | Crafting digital excellence with code.",
 };
 
 export const projects = [
   {
-    name: "vani.club",
-    description:
-      "YouTube Team Collaboration, Direct Uploads, and AI Magic for Effortless Content Creation!",
-    link: "https://vani.club",
-    inactive: true,
-  },
-  {
     name: "tini.fyi",
     description:
-      "Generate Short Links Effortlessly for Simplified, Secure, and Ad-Free Sharing!",
+      "Generate short links effortlessly for simplified, secure, and ad-free sharing!",
     link: "https://tini.fyi/from-portfolio",
   },
   {
     name: "suresh.im",
-    description: "Personal site - Showcase Your Work with Simplicity!",
+    description: "Personal site - Showcase your work with simplicity!",
     link: "https://github.com/impoiler/suresh.im",
   },
   {
-    name: "section.fyi",
-    description:
-      "Build Free Custom Page with Multiple Links for Effortless Online Presence!",
-    link: "https://section.fyi",
-    inactive: true,
+    name: "ip-info.site",
+    description: "Fast, secure, reliable API for IP lookups.",
+    link: "https://tini.fyi/ip-info",
   },
   {
     name: "tools",
     description:
-      "Your All-in-One Toolbox with Image to Base64, Domain Tools, IP Checker, and More!",
+      "Your all-in-one toolbox with image to base64, domain tools, IP checker, and more!",
     link: "https://tools.suresh.im",
   },
   {
     name: "@poiler/utils",
-    description: "React Hooks and Utility functions to make your life easier",
+    description: "React hooks and utility functions to make your life easier",
     link: "https://www.npmjs.com/package/@poiler/utils",
+  },
+  {
+    name: "vani.club",
+    description:
+      "YouTube team collaboration, direct uploads, and AI magic for effortless content creation!",
+    link: "https://vani.club",
+    inactive: true,
+  },
+  {
+    name: "section.fyi",
+    description:
+      "Build a custom page with multiple links for effortless online presence!",
+    link: "https://section.fyi",
+    inactive: true,
   },
 ];
 
