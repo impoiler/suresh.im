@@ -62,7 +62,7 @@ export const Links = {
   github: "https://github.com/impoiler",
   linkedin: "https://linkedin.com/in/impoiler",
   peerlist: "https://peerlist.io/suresh",
-  x: "https://twitter.com/elision_ims",
+  x: "https://twitter.com/impoiler",
   cal: "https://cal.com/impoiler",
 };
 
