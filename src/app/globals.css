@@ -63,31 +63,135 @@ a.out::after {
   background-repeat: no-repeat;
 }
 
-.tooltip {
+/* Base tooltip */
+[data-tooltip] {
   position: relative;
 }
 
-.tooltip::before {
-  content: attr(aria-label);
-  color: hsl(var(--background));
-  font-size: 12px;
+[data-tooltip]::before {
+  content: attr(data-tooltip);
   position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s, opacity 0.4s;
+  width: max-content;
+  z-index: 10;
+
+  /* Default positioning (bottom center) */
   left: 50%;
   top: calc(100% + 10px);
   transform: translateX(-50%);
-  opacity: 0;
-  visibility: hidden;
+
+  /* Default styling */
+  color: hsl(var(--background));
   background-color: hsl(var(--foreground));
-  padding: 1px 8px;
+  font-size: 12px;
+  padding: 4px 8px;
   font-weight: 500;
   border-radius: 5px;
-  align-items: center;
-  transition: transform 0.3s, opacity 0.4s;
-  width: max-content;
 }
 
-.tooltip:hover::before {
+[data-tooltip]:hover::before {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0px);
+}
+
+/* === Position Modifiers === */
+
+/* Top positioning */
+[data-tooltip][data-tooltip-top]::before {
+  top: auto;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
+
+[data-tooltip][data-tooltip-top]:hover::before {
+  transform: translateX(-50%) translateY(0px);
+}
+
+/* Left positioning */
+[data-tooltip][data-tooltip-left]::before {
+  top: 50%;
+  left: auto;
+  right: calc(100% + 10px);
+  bottom: auto;
+  transform: translateY(-50%);
+}
+
+[data-tooltip][data-tooltip-left]:hover::before {
+  transform: translateY(-50%) translateX(0px);
+}
+
+/* Right positioning */
+[data-tooltip][data-tooltip-right]::before {
+  top: 50%;
+  left: calc(100% + 10px);
+  right: auto;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+
+[data-tooltip][data-tooltip-right]:hover::before {
+  transform: translateY(-50%) translateX(0px);
+}
+
+/* === Size Modifiers === */
+
+[data-tooltip][data-tooltip-sm]::before {
+  font-size: 11px;
+  padding: 2px 6px;
+}
+
+[data-tooltip][data-tooltip-lg]::before {
+  font-size: 14px;
+  padding: 6px 12px;
+}
+
+/* === Theme Modifiers === */
+
+[data-tooltip][data-tooltip-light]::before {
+  color: hsl(var(--foreground));
+  background-color: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+}
+
+[data-tooltip][data-tooltip-primary]::before {
+  color: hsl(var(--primary-foreground));
+  background-color: hsl(var(--primary));
+}
+
+[data-tooltip][data-tooltip-secondary]::before {
+  color: hsl(var(--secondary-foreground));
+  background-color: hsl(var(--secondary));
+}
+
+[data-tooltip][data-tooltip-destructive]::before {
+  color: hsl(var(--destructive-foreground));
+  background-color: hsl(var(--destructive));
+}
+
+/* === Animation Speed Modifiers === */
+
+[data-tooltip][data-tooltip-fast]::before {
+  transition: transform 0.15s, opacity 0.2s;
+}
+
+[data-tooltip-slow]::before {
+  transition: transform 0.5s, opacity 0.6s;
+}
+
+/* === Content Alignment === */
+
+[data-tooltip][data-tooltip-left-align]::before {
+  left: 0;
+  transform: none;
+}
+
+[data-tooltip][data-tooltip-right-align]::before {
+  right: 0;
+  left: auto;
+  transform: none;
 }

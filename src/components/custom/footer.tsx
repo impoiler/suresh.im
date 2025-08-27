@@ -18,45 +18,45 @@ export default function Footer() {
       <ul className="flex gap-1 md:gap-2 items-center links">
         <li className="text-muted-foreground hover:text-white">
           <Link
-            className="flex items-center px-1 tooltip"
+            className="flex items-center px-1"
             href={Links.email}
-            aria-label={"Email"}
+            data-tooltip={"Email"}
           >
             {EmailIcon}
           </Link>
         </li>
         <li className="text-muted-foreground hover:text-white">
           <Link
-            className="flex items-center px-1 tooltip"
+            className="flex items-center px-1"
             href={Links.github}
-            aria-label={"Github"}
+            data-tooltip={"Github"}
           >
             {GithubIcon}
           </Link>
         </li>
         <li className="text-muted-foreground hover:text-white">
           <Link
-            className="flex items-center px-1 tooltip"
+            className="flex items-center px-1"
             href={Links.linkedin}
-            aria-label={"LinkedIn"}
+            data-tooltip={"LinkedIn"}
           >
             {LinkedInIcon}
           </Link>
         </li>
         <li className="text-muted-foreground hover:text-white">
           <Link
-            className="flex items-center px-1 tooltip"
+            className="flex items-center px-1"
             href={Links.peerlist}
-            aria-label={"Peerlist"}
+            data-tooltip={"Peerlist"}
           >
             {PeerlistIcon}
           </Link>
         </li>
         <li className="text-muted-foreground hover:text-white">
           <Link
-            className="flex items-center pl-1 tooltip"
+            className="flex items-center pl-1"
             href={Links.x}
-            aria-label={"X/Twitter"}
+            data-tooltip={"X/Twitter"}
           >
             {XIcon}
           </Link>
