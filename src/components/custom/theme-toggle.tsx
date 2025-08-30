@@ -17,8 +17,8 @@ export default function ThemeToggle() {
 
   return (
     <button
-      aria-label="toggle theme"
-      className="tooltip animate-reveal duration-1000 w-2 h-2 bg-primary rounded-full"
+      data-tooltip="toggle theme"
+      className="animate-reveal duration-1000 w-2 h-2 bg-primary rounded-full"
       onClick={setTheme}
     ></button>
   );

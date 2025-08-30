@@ -1,12 +1,21 @@
 import EmptyPlaceholder from "@/components/custom/empty-placeholder";
 import Link from "@/components/custom/link";
+import Loader from "@/components/custom/loader";
 import { externals } from "@/constant/data";
+import { cn } from "@/lib/utils";
 import { Blog, allBlogs } from "contentlayer/generated";
 import { ArrowLeft, NotebookPen } from "lucide-react";
 import type { MDXComponents } from "mdx/types";
 import type { Metadata } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
+import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
+
+// Lazy load CodeBlock component
+const CodeBlock = dynamic(() => import("@/components/custom/code-block"), {
+  ssr: false,
+  loading: () => <pre className="flex items-center justify-center p-4"><Loader size={16} /></pre>
+});
 
 export async function generateStaticParams() {
   return allBlogs.map((post) => ({
@@ -52,7 +61,7 @@ export async function generateMetadata({
 // Define your custom MDX components.
 const mdxComponents: MDXComponents = {
   a: ({ href, children }) => <Link href={href as string}>{children}</Link>,
-  // pre: ({ children }) => <CustomCodeBlock>{children}</CustomCodeBlock>,
+  pre: (props) => <CodeBlock {...(props as any)} className={cn(props.className, "!text-[12px] !bg-transparent font-codefont")} />,
 };
 
 const PostLayout = ({ params }: { params: { slug: string } }) => {

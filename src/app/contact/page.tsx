@@ -24,8 +24,8 @@ export default function ContactPage() {
       </h2>
       <Link
         href={Links.email}
-        className="text-md font-newsreader italic tooltip"
-        aria-label="Keep the subject line purposeful to help prioritize responses. "
+        className="text-md font-newsreader italic"
+        data-tooltip="Keep the subject line purposeful to help prioritize responses. "
       >
         {Links.email.replace("mailto:", "")}
       </Link>

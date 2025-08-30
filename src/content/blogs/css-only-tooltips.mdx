@@ -1,0 +1,302 @@
+---
+title: Create Tooltips Using CSS Only
+description: Many folks make the mistake of choosing heavy libraries just to show tooltips in a web app, whereas you can do it with just a few lines of CSS.
+date: 2025-08-30
+---
+
+I often see people reaching for tooltip libraries even for the simplest use cases. The truth is—you can achieve the same functionality with just a few lines of CSS. Of course, this approach comes with both pros and cons, and I'll cover them in detail below.
+
+## Demo
+
+<render id="custom-html-rendered">
+
+<h2 className="font-medium text-sm"> Position Controls </h2>
+
+<div
+  className="grid grid-cols-2 gap-8 p-8 mx-auto"
+  style={{ minHeight: 200, width: "65%" }}
+>
+  <div className="flex items-center justify-center">
+    <button
+      data-tooltip="Tooltip on top"
+      data-tooltip-top
+      className="bg-foreground text-background px-3 py-1.5 rounded-md text-sm font-medium"
+    >
+      Top
+    </button>
+  </div>
+  <div className="flex items-center justify-center">
+    <button
+      data-tooltip="Tooltip on bottom (default)"
+      className="bg-foreground text-background px-3 py-1.5 rounded-md text-sm font-medium"
+    >
+      Bottom
+    </button>
+  </div>
+  <div className="flex items-center justify-center">
+    <button
+      data-tooltip="Tooltip on left"
+      data-tooltip-left
+      className="bg-foreground text-background px-3 py-1.5 rounded-md text-sm font-medium"
+    >
+      Left
+    </button>
+  </div>
+  <div className="flex items-center justify-center">
+    <button
+      data-tooltip="Tooltip on right"
+      data-tooltip-right
+      className="bg-foreground text-background px-3 py-1.5 rounded-md text-sm font-medium"
+    >
+      Right
+    </button>
+  </div>
+</div>
+
+<h2 className="font-medium text-sm"> Size Controls </h2>
+
+<div
+  className="flex items-center justify-center gap-6 py-8"
+  style={{ minHeight: 200 }}
+>
+  <button
+    data-tooltip="Small tooltip"
+    data-tooltip-sm
+    className="bg-blue-500 text-white px-3 py-1.5 rounded-md text-sm font-medium"
+  >
+    Small
+  </button>
+  <button
+    data-tooltip="Normal tooltip (default)"
+    className="bg-blue-500 text-white px-3 py-1.5 rounded-md text-sm font-medium"
+  >
+    Normal
+  </button>
+  <button
+    data-tooltip="Large tooltip with more content"
+    data-tooltip-lg
+    className="bg-blue-500 text-white px-3 py-1.5 rounded-md text-sm font-medium"
+  >
+    Large
+  </button>
+</div>
+
+<h2 className="font-medium text-sm">Content Alignment Controls</h2>
+
+<div className="flex items-center justify-center gap-6 py-8" style={{minHeight: 200}}>
+  <button data-tooltip="Left aligned tooltip" data-tooltip-left-align data-tooltip-lg className="bg-purple-500 text-white px-3 py-1.5 rounded-md text-sm font-medium">
+    Left Align
+  </button>
+  <button data-tooltip="Center aligned tooltip" data-tooltip-center-align data-tooltip-lg className="bg-purple-500 text-white px-3 py-1.5 rounded-md text-sm font-medium">
+    Center Align
+  </button>
+  <button data-tooltip="Right aligned tooltip" data-tooltip-right-align data-tooltip-lg className="bg-purple-500 text-white px-3 py-1.5 rounded-md text-sm font-medium">
+    Right Align
+  </button>
+</div>
+</render>
+
+## Implementation
+
+Here's how to implement it. We'll build the utility using a data attribute. You can use any attribute name, but in this case, I'll go with `data-tooltip`.
+
+Wherever you want a tooltip, just add `data-tooltip="some text"`. The rest is handled purely with CSS.
+
+```html
+<div class="flex items-center justify-center">
+  <button
+    data-tooltip="This is a nice tooltip"
+    data-tooltip-top
+    className="bg-foreground text-background px-3 py-1.5 rounded-md text-sm font-medium"
+  >
+    Hover me
+  </button>
+</div>
+```
+
+```css
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s, opacity 0.4s;
+  width: max-content;
+  z-index: 10;
+
+  /* Default positioning (bottom center) */
+  left: 50%;
+  top: calc(100% + 10px);
+  transform: translateX(-50%);
+
+  /* Default styling */
+  color: #ffffff;
+  background-color: #171717;
+  font-size: 12px;
+  padding: 4px 8px;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+[data-tooltip]:hover::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0px);
+}
+```
+
+That's it. This is all the CSS you need for basic tooltip functionality. Add the `data-tooltip` attribute, and your tooltip is ready.
+
+## Limitations of This Approach
+
+As I mentioned earlier, for most use cases this works perfectly fine. But sometimes you'll need a library for more advanced scenarios. Here are a few comparisons:
+
+| Feature                                    | Libraries | CSS-only approach |
+| ------------------------------------------ | --------- | ----------------- |
+| Portal (escape overflow/stacking context)  | ✅        | ❌                |
+| Collision detection + flip                 | ✅        | ❌                |
+| Basic placement (top/bottom/left/right)    | ✅        | ✅                |
+| Content alignment (start/center/end)       | ✅        | ✅                |
+| Size variants (sm/lg)                      | ✅        | ✅                |
+| Theme variants (light/primary/secondary/…) | ✅        | ✅                |
+| Animation speed control (fast/slow)        | ✅        | ✅                |
+| Rich/HTML content                          | ✅        | ❌                |
+| Interactive content inside tooltip         | ✅        | ❌                |
+| Follow cursor                              | ✅        | ❌                |
+| Keyboard focus + ARIA defaults             | ✅        | ⚠️ partial        |
+| Touch support                              | ✅        | ⚠️ limited        |
+| Zero JS / tiny bundle impact               | ❌        | ✅                |
+
+
+## Advanced styles
+
+### Position Modifiers
+
+- `data-tooltip-left`
+- `data-tooltip-right`
+- `data-tooltip-top`
+
+```css
+/* Top positioning */
+[data-tooltip][data-tooltip-top]::before {
+  top: auto;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
+
+[data-tooltip][data-tooltip-top]:hover::before {
+  transform: translateX(-50%) translateY(0px);
+}
+
+/* Left positioning */
+[data-tooltip][data-tooltip-left]::before {
+  top: 50%;
+  left: auto;
+  right: calc(100% + 10px);
+  bottom: auto;
+  transform: translateY(-50%);
+}
+
+[data-tooltip][data-tooltip-left]:hover::before {
+  transform: translateY(-50%) translateX(0px);
+}
+
+/* Right positioning */
+[data-tooltip][data-tooltip-right]::before {
+  top: 50%;
+  left: calc(100% + 10px);
+  right: auto;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+
+[data-tooltip][data-tooltip-right]:hover::before {
+  transform: translateY(-50%) translateX(0px);
+}
+```
+
+### Size Modifiers
+
+- `data-tooltip-sm`
+- `data-tooltip-lg`
+
+```css
+[data-tooltip][data-tooltip-sm]::before {
+  font-size: 11px;
+  padding: 2px 6px;
+}
+
+[data-tooltip][data-tooltip-lg]::before {
+  font-size: 14px;
+  padding: 6px 12px;
+}
+```
+
+### Theme Modifiers
+
+- `data-tooltip-light`
+- `data-tooltip-primary`
+- `data-tooltip-secondary`
+- `data-tooltip-destructive`
+
+```css
+[data-tooltip][data-tooltip-light]::before {
+  color: hsl(var(--foreground));
+  background-color: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+}
+
+[data-tooltip][data-tooltip-primary]::before {
+  color: hsl(var(--primary-foreground));
+  background-color: hsl(var(--primary));
+}
+
+[data-tooltip][data-tooltip-secondary]::before {
+  color: hsl(var(--secondary-foreground));
+  background-color: hsl(var(--secondary));
+}
+
+[data-tooltip][data-tooltip-destructive]::before {
+  color: hsl(var(--destructive-foreground));
+  background-color: hsl(var(--destructive));
+}
+```
+
+### Animation Speed Modifiers
+
+- `data-tooltip-fast`
+- `data-tooltip-slow`
+
+```css
+[data-tooltip][data-tooltip-fast]::before {
+  transition: transform 0.15s, opacity 0.2s;
+}
+
+[data-tooltip-slow]::before {
+  transition: transform 0.5s, opacity 0.6s;
+}
+```
+
+### Content Alignment
+
+- `data-tooltip-left-align`
+- `data-tooltip-right-align`
+
+```css
+[data-tooltip][data-tooltip-left-align]::before {
+  left: 0;
+  transform: none;
+}
+
+[data-tooltip][data-tooltip-right-align]::before {
+  right: 0;
+  left: auto;
+  transform: none;
+}
+```
