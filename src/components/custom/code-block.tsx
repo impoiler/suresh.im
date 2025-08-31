@@ -27,7 +27,9 @@ export default function CodeBlock(props: PreProps) {
 
   const language = useMemo(() => {
     // Prefer explicit data-language from rehype-pretty-code
-    const dataLang = codeElement?.props?.["data-language"] as string | undefined;
+    const dataLang = codeElement?.props?.["data-language"] as
+      | string
+      | undefined;
     if (typeof dataLang === "string" && dataLang.length > 0) return dataLang;
     // Fallback: className language-*
     return getLanguageFromClassName(codeElement?.props?.className);
@@ -40,7 +42,8 @@ export default function CodeBlock(props: PreProps) {
 
   const onCopy = useCallback(async () => {
     try {
-      const text = preRef.current?.innerText ?? preRef.current?.textContent ?? "";
+      const text =
+        preRef.current?.innerText ?? preRef.current?.textContent ?? "";
       await navigator.clipboard.writeText(text);
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
@@ -51,29 +54,35 @@ export default function CodeBlock(props: PreProps) {
 
   return (
     <div className="code-block-container">
-      <div className="code-block-header">
-        <span className="code-block-lang">{languageLabel}</span>
+      <div
+        className="code-block-header"
+        style={{
+          backgroundColor: rest.style?.backgroundColor,
+        }}
+      >
+        <span className="code-block-lang" style={{
+            color: rest.style?.color
+          }}>{languageLabel}</span>
         <button
           type="button"
           className="code-block-copy"
           aria-label={copied ? "Copied" : "Copy code"}
           onClick={onCopy}
+          style={{
+            color: rest.style?.color
+          }}
         >
           {copied ? "Copied" : "Copy"}
         </button>
       </div>
 
       <pre ref={preRef} className={className} {...rest}>
-        {codeElement ? (
-          React.cloneElement(codeElement, {
-            className: codeElement.props?.className,
-          })
-        ) : (
-          children
-        )}
+        {codeElement
+          ? React.cloneElement(codeElement, {
+              className: codeElement.props?.className,
+            })
+          : children}
       </pre>
     </div>
   );
 }
-
-

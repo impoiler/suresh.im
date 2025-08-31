@@ -50,6 +50,7 @@ export default makeSource({
       [
         rehypePrettyCode as any,
         {
+          theme: "catppuccin-mocha",
           onVisitLine(node: { children: string | any[] }) {
             if (node.children.length === 0) {
               node.children = [{ type: "text", value: " " }];

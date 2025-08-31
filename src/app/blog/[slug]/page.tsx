@@ -61,7 +61,7 @@ export async function generateMetadata({
 // Define your custom MDX components.
 const mdxComponents: MDXComponents = {
   a: ({ href, children }) => <Link href={href as string}>{children}</Link>,
-  pre: (props) => <CodeBlock {...(props as any)} className={cn(props.className, "!text-[12px] !bg-transparent font-codefont")} />,
+  pre: (props) => <CodeBlock {...(props as any)} className={cn(props.className, "!text-[12px] font-codefont")} />,
 };
 
 const PostLayout = ({ params }: { params: { slug: string } }) => {
