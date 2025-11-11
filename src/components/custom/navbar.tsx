@@ -13,9 +13,9 @@ export default function Navbar() {
             className="text-lg w-max font-medium leading-normal"
           />
         </Link>
-        <ThemeToggle />
       </div>
-      <div className="flex gap-4">
+      <div className="flex gap-4 items-center">
+        <ThemeToggle />
         <Link href={Links.github} target="_blank">
           <AnimatedText
             text="github"
