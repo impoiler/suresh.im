@@ -1,11 +1,8 @@
-const { withContentlayer } = require('next-contentlayer')
-
-
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
-
+    turbopack: {},
+    outputFileTracingRoot: __dirname,
 }
 
-module.exports = withContentlayer(nextConfig)
+module.exports = nextConfig

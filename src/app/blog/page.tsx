@@ -1,7 +1,7 @@
 import BlogRow from "@/components/custom/blog-row";
 import { externals } from "@/constant/data";
 import { parseDate } from "@/lib/utils";
-import { allBlogs } from "contentlayer/generated";
+import { getAllBlogs } from "@/lib/mdx";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  const posts = allBlogs
+  const posts = getAllBlogs()
     .filter((blog) => blog.published)
     .sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
@@ -20,7 +20,7 @@ export default function BlogPage() {
       <div className="mt-2">
         <ul className="flex flex-col gap-3">
           {posts.map((blog) => (
-            <BlogRow key={blog._id} {...blog} />
+            <BlogRow key={blog.slug} {...blog} />
           ))}
         </ul>
       </div>

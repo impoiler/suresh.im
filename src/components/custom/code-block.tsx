@@ -18,9 +18,9 @@ export default function CodeBlock(props: PreProps) {
   const [copied, setCopied] = useState(false);
 
   const codeElement = useMemo(() => {
-    if (React.isValidElement(children)) return children as React.ReactElement;
+    if (React.isValidElement(children)) return children as React.ReactElement<any>;
     if (Array.isArray(children) && React.isValidElement(children[0])) {
-      return children[0] as React.ReactElement;
+      return children[0] as React.ReactElement<any>;
     }
     return null;
   }, [children]);

@@ -1,34 +1,26 @@
 import EmptyPlaceholder from "@/components/custom/empty-placeholder";
 import Link from "@/components/custom/link";
-import Loader from "@/components/custom/loader";
+import MDXContent from "@/components/custom/mdx-content";
 import { externals } from "@/constant/data";
-import { cn } from "@/lib/utils";
-import { Blog, allBlogs } from "contentlayer/generated";
+import { getAllBlogs, getBlogBySlug, serializeMDX } from "@/lib/mdx";
+import { formatDate } from "@/lib/utils";
 import { ArrowLeft, NotebookPen } from "lucide-react";
-import type { MDXComponents } from "mdx/types";
 import type { Metadata } from "next";
-import { useMDXComponent } from "next-contentlayer/hooks";
-import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 
-// Lazy load CodeBlock component
-const CodeBlock = dynamic(() => import("@/components/custom/code-block"), {
-  ssr: false,
-  loading: () => <pre className="flex items-center justify-center p-4"><Loader size={16} /></pre>
-});
-
 export async function generateStaticParams() {
-  return allBlogs.map((post) => ({
-    slug: post._raw.flattenedPath,
+  return getAllBlogs().map((post) => ({
+    slug: post.slug,
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata | undefined> {
-  const post = allBlogs.find((post) => post._raw.flattenedPath === params.slug);
+export async function generateMetadata(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+): Promise<Metadata | undefined> {
+  const params = await props.params;
+  const post = getBlogBySlug(params.slug);
 
   if (!post) {
     return notFound();
@@ -58,22 +50,13 @@ export async function generateMetadata({
   };
 }
 
-// Define your custom MDX components.
-const mdxComponents: MDXComponents = {
-  a: ({ href, children }) => <Link href={href as string}>{children}</Link>,
-  pre: (props) => <CodeBlock {...(props as any)} className={cn(props.className, "!text-[12px] font-codefont")} />,
-};
-
-const PostLayout = ({ params }: { params: { slug: string } }) => {
-  const post = allBlogs.find(
-    (post: Blog) => post._raw.flattenedPath === params.slug
-  );
+const PostLayout = async (props: { params: Promise<{ slug: string }> }) => {
+  const params = await props.params;
+  const post = getBlogBySlug(params.slug);
 
   if (!post) {
     notFound();
   }
-
-  const MDXContent = useMDXComponent(post.body.code);
 
   if (post.published === false) {
     return (
@@ -84,6 +67,8 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
       />
     );
   }
+
+  const mdxSource = await serializeMDX(post.content);
 
   return (
     <div className="mt-7 animate-reveal">
@@ -96,26 +81,14 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
           <ArrowLeft size={16} /> Back
         </Link>
         <span className="text-sm capitalize italic font-newsreader font-medium">
-          {post.date}
+          {formatDate(post.date)}
         </span>
       </header>
 
       <h1 className="post-title font-semibold">{post.title}</h1>
 
       <article className="blog-content">
-        <MDXContent
-          components={{
-            ...mdxComponents,
-            a: ({ href, children }) =>
-              href?.startsWith("http") ? (
-                <a href={`${href}?ref=${externals.referrer}`} target="_blank">
-                  {children}
-                </a>
-              ) : (
-                <Link href={href as string}>{children}</Link>
-              ),
-          }}
-        />
+        <MDXContent source={mdxSource} />
       </article>
     </div>
   );
