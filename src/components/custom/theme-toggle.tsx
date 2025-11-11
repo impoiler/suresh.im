@@ -32,8 +32,6 @@ export default function ThemeToggle() {
     }
   }, []);
 
-  console.log(currentTheme);
-
   return (
     <button
       data-tooltip="toggle theme"
