@@ -1,5 +1,7 @@
 import { cn } from "@/lib/utils";
 
+import type { JSX } from "react";
+
 interface PlaceholderProps {
   title?: string | React.ReactNode;
   icon?: JSX.Element | React.ReactNode;

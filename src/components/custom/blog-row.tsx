@@ -1,12 +1,14 @@
-import { allBlogs } from "contentlayer/generated";
+import { Blog } from "@/lib/mdx";
+import { formatDate } from "@/lib/utils";
 import Link from "./link";
-export default function BlogRow(blog: (typeof allBlogs)[0]) {
+
+export default function BlogRow(blog: Blog) {
   return (
     <Link href={`/${blog.url}`} className="text-sm font-medium">
       <li className="flex flex-col">
         <h3 className="lowercase">{blog.title}</h3>
         <span className="text-secondary text-xs">
-          {blog.date.toLowerCase()}
+          {formatDate(blog.date)}
         </span>
       </li>
     </Link>

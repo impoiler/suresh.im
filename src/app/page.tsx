@@ -3,10 +3,10 @@ import Link from "@/components/custom/link";
 import Project from "@/components/custom/project";
 import { externals, projects } from "@/constant/data";
 import { parseDate } from "@/lib/utils";
-import { allBlogs } from "contentlayer/generated";
+import { getAllBlogs } from "@/lib/mdx";
 
 export default function Home() {
-  const posts = allBlogs
+  const posts = getAllBlogs()
     .filter((blog) => blog.published)
     .sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
@@ -54,7 +54,7 @@ export default function Home() {
           <div className="mt-3">
             <ul className="blog-articles flex flex-col gap-3">
               {posts.slice(0, 4).map((blog) => (
-                <BlogRow key={blog._id} {...blog} />
+                <BlogRow key={blog.slug} {...blog} />
               ))}
               {posts.length > 4 && (
                 <li>
