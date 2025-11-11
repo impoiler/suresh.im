@@ -1,7 +1,8 @@
 import fs from "fs";
-import path from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
+import { SerializeOptions } from "node_modules/next-mdx-remote/dist/types";
+import path from "path";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
@@ -66,8 +67,8 @@ export function getBlogBySlug(slug: string): Blog | null {
   }
 }
 
-export const mdxOptions = {
-  remarkPlugins: [remarkGfm],
+export const mdxOptions: SerializeOptions["mdxOptions"] = {
+  remarkPlugins: [remarkGfm as any],
   rehypePlugins: [
     rehypeSlug,
     [
