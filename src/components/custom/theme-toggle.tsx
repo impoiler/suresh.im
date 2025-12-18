@@ -1,33 +1,29 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useLayoutEffect, useState } from "react";
 
-export default function ThemeToggle() {
-  const router = useRouter();
-  const [currentTheme, setCurrentTheme] = useState("light");
-  const setTheme = () => {
-    const theme = document.cookie
-      .split(";")
-      .map((cookie) => cookie.trim())
-      .find((cookie) => cookie.startsWith("theme="))
-      ?.split("=")[1];
+function getThemeFromCookie(): string | undefined {
+  return document.cookie
+    .split(";")
+    .map((cookie) => cookie.trim())
+    .find((cookie) => cookie.startsWith("theme="))
+    ?.split("=")[1];
+}
 
-    document.cookie = `theme=${theme === "dark" ? "light" : "dark"}; path=/`;
-    setCurrentTheme(theme === "dark" ? "light" : "dark");
-    router.refresh();
+export default function ThemeToggle() {
+  const [currentTheme, setCurrentTheme] = useState("light");
+
+  const toggleTheme = () => {
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    document.cookie = `theme=${newTheme}; path=/; max-age=31536000`;
+    document.documentElement.setAttribute("data-theme", newTheme);
+    setCurrentTheme(newTheme);
   };
 
   useLayoutEffect(() => {
-    const theme = document.cookie
-      .split(";")
-      .map((cookie) => cookie.trim())
-      .find((cookie) => cookie.startsWith("theme="))
-      ?.split("=")[1];
-
-     
+    const theme = getThemeFromCookie();
     if (theme) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+      document.documentElement.setAttribute("data-theme", theme);
       setCurrentTheme(theme);
     }
   }, []);
@@ -36,7 +32,7 @@ export default function ThemeToggle() {
     <button
       data-tooltip="toggle theme"
       className="animate-reveal rounded-full text-sm text-secondary hover:text-primary font-medium"
-      onClick={setTheme}
+      onClick={toggleTheme}
     >
       {currentTheme === "dark" ? "light" : "dark"}
     </button>

@@ -5,7 +5,6 @@ import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import { Newsreader } from "next/font/google";
-import { cookies } from "next/headers";
 import "./globals.css";
 
 const newsreader = Newsreader({
@@ -142,16 +141,26 @@ const jsonLd = {
   ],
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const theme = (await cookies()).get("theme")?.value;
-
   return (
-    <html lang="en" data-theme={theme ?? "light"}>
+    <html lang="en" data-theme="light" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = document.cookie.split(';').map(c => c.trim()).find(c => c.startsWith('theme='));
+                  if (theme) document.documentElement.setAttribute('data-theme', theme.split('=')[1]);
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
