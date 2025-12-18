@@ -1,6 +1,6 @@
+import BlogContent from "@/components/custom/blog-content";
 import EmptyPlaceholder from "@/components/custom/empty-placeholder";
 import Link from "@/components/custom/link";
-import MDXContent from "@/components/custom/mdx-content";
 import { externals } from "@/constant/data";
 import { getAllBlogs, getBlogBySlug, serializeMDX } from "@/lib/mdx";
 import { formatDate } from "@/lib/utils";
@@ -97,7 +97,7 @@ const PostLayout = async (props: { params: Promise<{ slug: string }> }) => {
       <h1 className="post-title font-semibold">{post.title}</h1>
 
       <article className="blog-content">
-        <MDXContent source={mdxSource} />
+        <BlogContent source={mdxSource} />
       </article>
     </div>
   );
