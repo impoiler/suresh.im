@@ -29,20 +29,29 @@ export async function generateMetadata(
   const { title, description, date, url } = post;
 
   return {
-    title: `${title} | ${externals.name}`,
+    title: `${title} | ${externals.fullName}`,
     description,
+    authors: [{ name: externals.fullName }],
+    keywords: [
+      ...externals.keywords,
+      "blog",
+      "tech article",
+      title.toLowerCase(),
+    ],
     openGraph: {
-      title,
+      title: `${title} - ${externals.fullName}`,
       description,
       type: "article",
       publishedTime: date,
       url: `${externals.base_url}/blog/${url}`,
-      authors: externals.name,
-      images: [`/${url}.png`, "/og.png"],
+      authors: [externals.fullName],
+      images: [`/blog/${post.slug}.png`, "/og.png"],
     },
     twitter: {
-      title,
+      card: "summary_large_image",
+      title: `${title} - ${externals.fullName}`,
       description,
+      creator: "@impoiler",
     },
     alternates: {
       canonical: `${externals.base_url}/blog/${url}`,

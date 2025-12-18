@@ -5,6 +5,27 @@ import { externals, Links, projects } from "@/constant/data";
 import { getAllBlogs } from "@/lib/mdx";
 import { parseDate } from "@/lib/utils";
 import { CalendarDays } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: `${externals.fullName} - Full-Stack Engineer from India | Maxim AI`,
+  description: `${externals.fullName} is a Full-Stack Engineer from India, building AI testing tools at Maxim AI. Expert in React, Next.js, TypeScript, and LLM applications.`,
+  keywords: [
+    ...externals.keywords,
+    "portfolio",
+    "personal website",
+    "web developer portfolio",
+  ],
+  alternates: {
+    canonical: externals.base_url,
+  },
+  openGraph: {
+    title: `${externals.fullName} - Full-Stack Engineer from India`,
+    description: `${externals.fullName} is a Full-Stack Engineer building AI testing tools at Maxim AI. Expert in React, Next.js, and LLM applications.`,
+    url: externals.base_url,
+    images: ["/og.png"],
+  },
+};
 
 export default function Home() {
   const posts = getAllBlogs()

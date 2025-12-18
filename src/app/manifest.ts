@@ -1,0 +1,22 @@
+import { externals } from "@/constant/data";
+import { MetadataRoute } from "next";
+
+export default function manifest(): MetadataRoute.Manifest {
+  return {
+    name: `${externals.fullName} - Full-Stack Engineer`,
+    short_name: externals.fullName,
+    description: externals.meta_description,
+    start_url: "/",
+    display: "standalone",
+    background_color: "#ffffff",
+    theme_color: "#000000",
+    icons: [
+      {
+        src: "/favicon.ico",
+        sizes: "any",
+        type: "image/x-icon",
+      },
+    ],
+  };
+}
+

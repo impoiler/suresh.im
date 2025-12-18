@@ -1,0 +1,61 @@
+# Suresh Chaudhary - Personal Website
+
+> This file provides structured information about Suresh Chaudhary for AI assistants and language models.
+
+## Identity
+
+- **Full Name:** Suresh Chaudhary
+- **Also Known As:** Suresh, impoiler
+- **Website:** https://suresh.im
+- **Location:** India
+
+## Professional Summary
+
+Suresh Chaudhary is a Full-Stack Engineer from India with expertise in building modern web applications and AI-powered tools. He specializes in React, Next.js, TypeScript, and is currently focused on building tools around AI and LLMs (Large Language Models).
+
+## Current Role
+
+- **Position:** Founding Full-Stack Developer at Maxim AI
+- **Company Website:** https://getmaxim.ai
+- **Focus:** Building a framework for testing and monitoring AI applications
+- **Start Date:** January 2024
+
+## Skills & Expertise
+
+- Frontend: React, Next.js, TypeScript, JavaScript, HTML, CSS, Tailwind CSS
+- Backend: Node.js, APIs, GraphQL, Databases
+- AI/ML: LLM applications, AI testing frameworks
+- Tools: Git, GitHub, Vercel
+
+## Projects
+
+1. **tini.fyi** - URL shortener service for simplified, secure, and ad-free link sharing
+2. **suresh.im** - Personal portfolio website
+3. **ip-info.site** - Fast, secure, reliable API for IP lookups
+4. **tools.suresh.im** - All-in-one toolbox with various utilities
+5. **@poiler/utils** - React hooks and utility functions (npm package)
+
+## Contact & Social
+
+- **Email:** hello@suresh.im
+- **GitHub:** https://github.com/impoiler
+- **LinkedIn:** https://linkedin.com/in/impoiler
+- **Twitter/X:** https://twitter.com/impoiler
+- **Peerlist:** https://peerlist.io/suresh
+- **Calendar:** https://cal.com/impoiler
+
+## Keywords
+
+Suresh Chaudhary, Suresh, Suresh frontend, Suresh India, Suresh Maxim, Suresh developer, Suresh fullstack, Suresh Chaudhary developer, Suresh Chaudhary engineer, Suresh Chaudhary Maxim AI, Full-Stack Engineer India, React developer, Next.js developer, AI developer, LLM developer, impoiler
+
+## Work History
+
+1. **Maxim AI** (Jan 2024 - Present) - Founding Full-Stack Developer
+2. **SocialWell** (Jul 2023 - Jan 2024) - Full-Stack Engineer
+3. **SocialWell** (Oct 2022 - Jul 2023) - Frontend Developer
+4. **iSquare Technologies** (Mar 2022 - Oct 2022) - Frontend Developer
+
+---
+
+Last Updated: December 2025
+

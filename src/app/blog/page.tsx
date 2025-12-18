@@ -5,8 +5,26 @@ import { getAllBlogs } from "@/lib/mdx";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `${externals.name} . blog`,
-  description: "Less, but I share my thoughts here.",
+  title: `Blog - ${externals.fullName}'s Thoughts on Tech & Development`,
+  description: `Read ${externals.fullName}'s blog posts on web development, React, Next.js, AI, LLMs, and software engineering. Insights from a Full-Stack Engineer at Maxim AI.`,
+  keywords: [
+    ...externals.keywords,
+    "Suresh Chaudhary blog",
+    "tech blog",
+    "web development blog",
+    "React tutorials",
+    "Next.js tips",
+    "AI development blog",
+  ],
+  alternates: {
+    canonical: `${externals.base_url}/blog`,
+  },
+  openGraph: {
+    title: `Blog - ${externals.fullName}`,
+    description: `Tech insights and thoughts from ${externals.fullName}, Full-Stack Engineer at Maxim AI.`,
+    url: `${externals.base_url}/blog`,
+    images: ["/og.png"],
+  },
 };
 
 export default function BlogPage() {
