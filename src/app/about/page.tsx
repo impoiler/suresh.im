@@ -2,7 +2,24 @@ import { experiences, externals } from "@/constant/data";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `${externals.name} . about`,
+  title: `About ${externals.fullName} - Work Experience & Background`,
+  description: `Learn about ${externals.fullName}'s journey as a Full-Stack Engineer. Currently at Maxim AI, previously at SocialWell and iSquare Technologies. Expertise in React, Next.js, AI/LLM development.`,
+  keywords: [
+    ...externals.keywords,
+    "about Suresh Chaudhary",
+    "Suresh Chaudhary experience",
+    "Suresh Chaudhary work history",
+    "Maxim AI engineer",
+  ],
+  alternates: {
+    canonical: `${externals.base_url}/about`,
+  },
+  openGraph: {
+    title: `About ${externals.fullName} - Full-Stack Engineer`,
+    description: `${externals.fullName}'s professional journey and work experience as a Full-Stack Engineer in India.`,
+    url: `${externals.base_url}/about`,
+    images: ["/og.png"],
+  },
 };
 
 export default function AboutPage() {

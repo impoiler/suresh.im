@@ -1,6 +1,6 @@
+import BlogContent from "@/components/custom/blog-content";
 import EmptyPlaceholder from "@/components/custom/empty-placeholder";
 import Link from "@/components/custom/link";
-import MDXContent from "@/components/custom/mdx-content";
 import { externals } from "@/constant/data";
 import { getAllBlogs, getBlogBySlug, serializeMDX } from "@/lib/mdx";
 import { formatDate } from "@/lib/utils";
@@ -29,20 +29,29 @@ export async function generateMetadata(
   const { title, description, date, url } = post;
 
   return {
-    title: `${title} | ${externals.name}`,
+    title: `${title} | ${externals.fullName}`,
     description,
+    authors: [{ name: externals.fullName }],
+    keywords: [
+      ...externals.keywords,
+      "blog",
+      "tech article",
+      title.toLowerCase(),
+    ],
     openGraph: {
-      title,
+      title: `${title} - ${externals.fullName}`,
       description,
       type: "article",
       publishedTime: date,
       url: `${externals.base_url}/blog/${url}`,
-      authors: externals.name,
-      images: [`/${url}.png`, "/og.png"],
+      authors: [externals.fullName],
+      images: [`/blog/${post.slug}.png`, "/og.png"],
     },
     twitter: {
-      title,
+      card: "summary_large_image",
+      title: `${title} - ${externals.fullName}`,
       description,
+      creator: "@impoiler",
     },
     alternates: {
       canonical: `${externals.base_url}/blog/${url}`,
@@ -88,7 +97,7 @@ const PostLayout = async (props: { params: Promise<{ slug: string }> }) => {
       <h1 className="post-title font-semibold">{post.title}</h1>
 
       <article className="blog-content">
-        <MDXContent source={mdxSource} />
+        <BlogContent source={mdxSource} />
       </article>
     </div>
   );

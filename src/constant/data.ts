@@ -8,9 +8,42 @@ export const externals = {
   logo_text: "suresh.",
   footer_logo_text: "Suresh Chaudhary",
   name: "suresh",
+  fullName: "Suresh Chaudhary",
   referrer: "suresh.im",
   meta_description:
-    "Fullstack engineer Suresh Chaudhary | Crafting digital excellence with code.",
+    "Suresh Chaudhary is a Full-Stack Engineer from India, currently building AI testing tools at Maxim AI. Specializing in React, Next.js, and LLM applications.",
+  jobTitle: "Full-Stack Engineer",
+  jobTitleAlt: ["Frontend Developer", "Software Engineer", "Founding Engineer"],
+  location: {
+    city: "India",
+    country: "IN",
+  },
+  keywords: [
+    "Suresh Chaudhary",
+    "Suresh",
+    "Suresh frontend",
+    "Suresh India",
+    "Suresh Maxim",
+    "Suresh developer",
+    "Suresh fullstack",
+    "Suresh Chaudhary developer",
+    "Suresh Chaudhary engineer",
+    "Suresh Chaudhary Maxim AI",
+    "Suresh Chaudhary frontend",
+    "Suresh Chaudhary India",
+    "Full-Stack Engineer India",
+    "React developer India",
+    "Next.js developer",
+    "AI developer India",
+    "LLM developer",
+    "impoiler",
+  ],
+  social: {
+    github: "https://github.com/impoiler",
+    linkedin: "https://linkedin.com/in/impoiler",
+    twitter: "https://twitter.com/impoiler",
+    peerlist: "https://peerlist.io/suresh",
+  },
 };
 
 export const projects = [

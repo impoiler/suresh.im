@@ -4,7 +4,24 @@ import { CalendarDays } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `${externals.name} . contact`,
+  title: `Contact ${externals.fullName} - Get in Touch`,
+  description: `Contact ${externals.fullName}, Full-Stack Engineer at Maxim AI. Reach out for project discussions, collaborations, or casual conversations. Book a call or send an email.`,
+  keywords: [
+    ...externals.keywords,
+    "contact Suresh Chaudhary",
+    "hire Suresh Chaudhary",
+    "Suresh Chaudhary email",
+    "book call developer",
+  ],
+  alternates: {
+    canonical: `${externals.base_url}/contact`,
+  },
+  openGraph: {
+    title: `Contact ${externals.fullName}`,
+    description: `Get in touch with ${externals.fullName} for collaborations, projects, or conversations.`,
+    url: `${externals.base_url}/contact`,
+    images: ["/og.png"],
+  },
 };
 
 export default function ContactPage() {
