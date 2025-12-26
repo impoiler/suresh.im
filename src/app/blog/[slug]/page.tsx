@@ -27,9 +27,9 @@ export async function generateMetadata(
   }
 
   const { title, description, date, url } = post;
-
+  
   return {
-    title: `${title} | ${externals.fullName}`,
+    title: `${title} | Blog`,
     description,
     authors: [{ name: externals.fullName }],
     keywords: [
