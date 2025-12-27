@@ -9,6 +9,7 @@ export const externals = {
   footer_logo_text: "Suresh Chaudhary",
   name: "suresh",
   fullName: "Suresh Chaudhary",
+  email: "hello@suresh.im",
   referrer: "suresh.im",
   meta_description:
     "Suresh Chaudhary is a Full-Stack Engineer from India, currently building AI testing tools at Maxim AI. Specializing in React, Next.js, and LLM applications.",

@@ -82,7 +82,8 @@ const jsonLd = {
       description:
         "Full-Stack Engineer from India, currently building AI testing tools at Maxim AI. Specializing in React, Next.js, and LLM applications.",
       url: externals.base_url,
-      image: `${externals.base_url}/og.png`,
+      image: `${externals.base_url}/suresh.jpg`,
+      email: externals.email,
       jobTitle: externals.jobTitle,
       worksFor: {
         "@type": "Organization",
@@ -99,7 +100,11 @@ const jsonLd = {
         "TypeScript",
         "JavaScript",
         "Node.js",
+        "Express.js",
+        "GraphQL",
+        "Prisma",
         "AI",
+        "AI Tools",
         "LLM",
         "Full-Stack Development",
         "Frontend Development",
@@ -129,10 +134,10 @@ const jsonLd = {
       url: externals.base_url,
       name: externals.fullName,
       isPartOf: {
-        "@id": `${externals.base_url}/#website`,
+        "@id": `${externals.base_url}/about`,
       },
       about: {
-        "@id": `${externals.base_url}/#person`,
+        "@id": `${externals.base_url}/about`,
       },
       mainEntity: {
         "@id": `${externals.base_url}/#person`,
