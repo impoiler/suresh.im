@@ -60,10 +60,12 @@ export default function Navbar() {
               </svg>
               </Link>
             </span>
+            <Link href="/">
             <AnimatedText
               text="suresh"
               className="text-lg w-max font-medium leading-normal"
             />
+          </Link>
         </span>
       </div>
       <div className="flex gap-4 items-center">
