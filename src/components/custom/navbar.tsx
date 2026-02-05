@@ -9,10 +9,9 @@ export default function Navbar() {
       <div className="flex items-baseline gap-2">
         <span
           className="relative inline-flex items-baseline"
-          data-tooltip="toggle theme"
-        >
-          <Link href="/blog/2025" aria-label="Read the 2025 blog post" data-tooltip="Looking back at 2025">
+        > 
             <span className="absolute -top-3 -left-4 sm:-top-4 sm:-left-5 rotate-[-18deg] transition-transform duration-200 hover:rotate-[-10deg] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background">
+              <Link href="/blog/2025" aria-label="Read the 2025 blog post" data-tooltip="Looking back at 2025">
               <svg
                 width="28"
                 height="28"
@@ -60,11 +59,11 @@ export default function Navbar() {
                 />
               </svg>
             </span>
+            </Link>
             <AnimatedText
               text="suresh"
               className="text-lg w-max font-medium leading-normal"
             />
-          </Link>
         </span>
       </div>
       <div className="flex gap-4 items-center">
