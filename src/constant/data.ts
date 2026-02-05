@@ -65,7 +65,7 @@ export const projects = [
     link: "https://tini.fyi/ip-info",
   },
   {
-    name: "tools",
+    name: "tools(💩)",
     description:
       "Your all-in-one toolbox with image to base64, domain tools, IP checker, and more!",
     link: "https://tools.suresh.im",
@@ -79,7 +79,7 @@ export const projects = [
     name: "vani.club",
     description:
       "YouTube team collaboration, direct uploads, and AI magic for effortless content creation!",
-    link: "https://vani.club",
+    link: "https://vani-club.vercel.app",
     inactive: true,
   },
   {
