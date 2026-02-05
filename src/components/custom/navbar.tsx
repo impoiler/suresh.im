@@ -58,8 +58,8 @@ export default function Navbar() {
                   className="fill-slate-200/70 dark:fill-slate-300/50"
                 />
               </svg>
+              </Link>
             </span>
-            </Link>
             <AnimatedText
               text="suresh"
               className="text-lg w-max font-medium leading-normal"
