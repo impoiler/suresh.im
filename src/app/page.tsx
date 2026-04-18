@@ -52,7 +52,15 @@ export default function Home() {
         >
           {externals.compony.name}{" "}
         </Link>
-        , building a framework for testing and monitoring AI applications.
+        , building a framework for testing and monitoring AI applications and{" "}
+        <Link
+          target="_blank"
+          href="https://getbifrost.ai/"
+          className="font-newsreader text-primary out font-medium italic"
+        >
+          Bifrost
+        </Link>
+        , the fastest AI gateway.
       </p>
 
       <div className="animate-reveal mt-4 space-y-3">

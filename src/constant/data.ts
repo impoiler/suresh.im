@@ -110,7 +110,7 @@ export const experiences = [
         fromToTill: "Jan 2024",
         type: "Full-Time",
         notes: [
-          "Driven by a personal passion for AI and LLMs in general, I joined Maxim AI as a founding team member. In this role, I actively contributed to the establishment of a framework designed for testing and monitoring AI applications.",
+          "Driven by a personal passion for AI and LLMs in general, I joined Maxim AI as a founding team member. In this role, I actively contributed to the establishment of a framework designed for testing and monitoring AI applications, and Bifrost (https://getbifrost.ai/) — the fastest AI gateway.",
         ],
       },
     ],

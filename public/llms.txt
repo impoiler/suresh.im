@@ -17,7 +17,7 @@ Suresh Chaudhary is a Full-Stack Engineer from India with expertise in building 
 
 - **Position:** Founding Full-Stack Developer at Maxim AI
 - **Company Website:** https://getmaxim.ai
-- **Focus:** Building a framework for testing and monitoring AI applications
+- **Focus:** Building a framework for testing and monitoring AI applications, and Bifrost (https://getbifrost.ai/) — the fastest AI gateway
 - **Start Date:** January 2024
 
 ## Skills & Expertise
