@@ -22,7 +22,7 @@ React, Next.js, TypeScript, Node.js, web application architecture, LLM applicati
 ## Selected projects
 
 - [tini.fyi](https://sureshchaudhary.com/projects/tini-fyi): privacy-friendly URL shortening.
-- [SureshChaudhary.com](https://sureshchaudhary.com/projects/personal-website): personal website and publishing platform.
+- [suresh.im](https://sureshchaudhary.com/projects/personal-website): personal website and publishing platform.
 - [ip-info.site](https://sureshchaudhary.com/projects/ip-info-site): IP lookup API and interface.
 - [@poiler/utils](https://sureshchaudhary.com/projects/poiler-utils): React hooks and TypeScript utilities.
 

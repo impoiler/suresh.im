@@ -28,12 +28,11 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <div className="mt-10 animate-reveal">
-      <h1 className="font-newsreader font-medium italic text-lg">Projects by Suresh Chaudhary</h1>
-      <p className="mt-2 text-sm text-secondary">Selected products and open-source work I have designed and built.</p>
+      <h1 className="font-newsreader font-medium italic text-lg">projects</h1>
       <div className="mt-2">
         <ul className="flex flex-col gap-3 projects">
           {projects.map((project) => (
-            <Project key={project.name} {...project} internal />
+            <Project key={project.name} {...project} />
           ))}
         </ul>
       </div>

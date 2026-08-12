@@ -34,7 +34,7 @@ export default function BlogPage() {
 
   return (
     <div className="mt-10 animate-reveal blog-articles">
-      <h1 className="font-newsreader font-medium italic text-lg">Writing by Suresh Chaudhary</h1>
+      <h1 className="font-newsreader font-medium italic text-lg">thoughts</h1>
       <div className="mt-2">
         <ul className="flex flex-col gap-3">
           {posts.map((blog) => (

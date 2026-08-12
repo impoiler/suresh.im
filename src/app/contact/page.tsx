@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="mt-10">
-      <h1 className="text-lg font-medium font-newsreader italic">Contact Suresh Chaudhary</h1>
+      <h1 className="text-lg font-medium font-newsreader italic">say hello,</h1>
       <span className="mt-5 h-0 block" />
       <p className="text-secondary text-sm">
         Beyond Professional Ties: Reach out for anything from project

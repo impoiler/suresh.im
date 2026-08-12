@@ -1,5 +1,4 @@
 import Navbar from "@/components/custom/navbar";
-import Footer from "@/components/custom/footer";
 import { externals } from "@/constant/data";
 import { Analytics } from "@vercel/analytics/react";
 import { GeistMono } from "geist/font/mono";
@@ -162,7 +161,6 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
-          <Footer />
           <Analytics mode="production" />
         </div>
       </body>

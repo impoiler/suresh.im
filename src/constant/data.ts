@@ -61,8 +61,8 @@ export const projects = [
   },
   {
     slug: "personal-website",
-    name: "SureshChaudhary.com",
-    description: "My personal website and publishing home.",
+    name: "suresh.im",
+    description: "Personal site - Showcase your work with simplicity!",
     link: "https://github.com/impoiler/suresh.im",
     role: "Designer and developer",
     stack: ["Next.js", "TypeScript", "MDX", "Vercel"],

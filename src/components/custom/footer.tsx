@@ -10,7 +10,7 @@ import Link from "./link";
 
 export default function Footer() {
   return (
-    <footer className="mt-20 border-t border-secondary/20 py-6 flex items-center justify-between">
+    <footer className="py-3 flex items-center justify-between">
       <Link href={"/"} className="text text-muted-foreground hover:text-white">
         {externals.footer_logo_text}
       </Link>
@@ -21,7 +21,6 @@ export default function Footer() {
             className="flex items-center px-1"
             href={Links.email}
             data-tooltip={"Email"}
-            aria-label="Email Suresh Chaudhary"
           >
             {EmailIcon}
           </Link>
@@ -31,7 +30,6 @@ export default function Footer() {
             className="flex items-center px-1"
             href={Links.github}
             data-tooltip={"Github"}
-            aria-label="Suresh Chaudhary on GitHub"
           >
             {GithubIcon}
           </Link>
@@ -41,7 +39,6 @@ export default function Footer() {
             className="flex items-center px-1"
             href={Links.linkedin}
             data-tooltip={"LinkedIn"}
-            aria-label="Suresh Chaudhary on LinkedIn"
           >
             {LinkedInIcon}
           </Link>
@@ -51,7 +48,6 @@ export default function Footer() {
             className="flex items-center px-1"
             href={Links.peerlist}
             data-tooltip={"Peerlist"}
-            aria-label="Suresh Chaudhary on Peerlist"
           >
             {PeerlistIcon}
           </Link>
@@ -61,7 +57,6 @@ export default function Footer() {
             className="flex items-center pl-1"
             href={Links.x}
             data-tooltip={"X/Twitter"}
-            aria-label="Suresh Chaudhary on X"
           >
             {XIcon}
           </Link>

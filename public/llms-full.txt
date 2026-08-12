@@ -16,7 +16,7 @@ Suresh Chaudhary is a Full-Stack Engineer from India focused on AI developer inf
 ## Projects
 
 - tini.fyi — created and engineered a privacy-friendly URL shortener; case study: https://sureshchaudhary.com/projects/tini-fyi
-- SureshChaudhary.com — designed and developed this Next.js and MDX publishing site; case study: https://sureshchaudhary.com/projects/personal-website
+- suresh.im — designed and developed this Next.js and MDX publishing site; case study: https://sureshchaudhary.com/projects/personal-website
 - ip-info.site — created an IP lookup API and web interface; case study: https://sureshchaudhary.com/projects/ip-info-site
 - Developer tools — built browser-based utilities; case study: https://sureshchaudhary.com/projects/developer-tools
 - @poiler/utils — authored reusable React hooks and TypeScript utilities; case study: https://sureshchaudhary.com/projects/poiler-utils

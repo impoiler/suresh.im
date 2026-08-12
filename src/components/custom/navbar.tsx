@@ -1,3 +1,4 @@
+import { Links } from "@/constant/data";
 import AnimatedText from "./animated-text";
 import Link from "./link";
 import ThemeToggle from "./theme-toggle";
@@ -59,7 +60,7 @@ export default function Navbar() {
               </svg>
               </Link>
             </span>
-            <Link href="/" aria-label="Suresh Chaudhary — home">
+            <Link href="/">
             <AnimatedText
               text="suresh"
               className="text-lg w-max font-medium leading-normal"
@@ -67,29 +68,29 @@ export default function Navbar() {
           </Link>
         </span>
       </div>
-      <div className="flex gap-3 sm:gap-4 items-center">
+      <div className="flex gap-4 items-center">
         <ThemeToggle />
-        <Link href="/about">
+        <Link href={Links.github} target="_blank">
           <AnimatedText
-            text="about"
+            text="github"
             className="text-sm text-secondary hover:text-primary font-medium"
           />
         </Link>
-        <Link href="/projects">
+        <Link href={Links.linkedin} target="_blank">
           <AnimatedText
-            text="projects"
+            text="linkedIn"
             className="text-sm text-secondary hover:text-primary font-medium"
           />
         </Link>
-        <Link href="/blog">
+        <Link href={Links.peerlist} target="_blank">
           <AnimatedText
-            text="writing"
+            text="peerlist"
             className="text-sm text-secondary hover:text-primary font-medium"
           />
         </Link>
-        <Link href="/contact">
+        <Link href={Links.x} target="_blank">
           <AnimatedText
-            text="contact"
+            text="x (twitter)"
             className="text-sm text-secondary hover:text-primary font-medium"
           />
         </Link>
