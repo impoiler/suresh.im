@@ -4,13 +4,14 @@ export const externals = {
     name: "Maxim AI",
     site: "https://getmaxim.ai",
   },
-  base_url: "https://suresh.im",
+  base_url: "https://sureshchaudhary.com",
   logo_text: "suresh.",
   footer_logo_text: "Suresh Chaudhary",
   name: "suresh",
   fullName: "Suresh Chaudhary",
+  handle: "impoiler",
   email: "hello@suresh.im",
-  referrer: "suresh.im",
+  referrer: "sureshchaudhary.com",
   meta_description:
     "Suresh Chaudhary is a Full-Stack Engineer from India, currently building AI testing tools at Maxim AI. Specializing in React, Next.js, and LLM applications.",
   jobTitle: "Full-Stack Engineer",
@@ -49,45 +50,74 @@ export const externals = {
 
 export const projects = [
   {
+    slug: "tini-fyi",
     name: "tini.fyi",
     description:
       "Generate short links effortlessly for simplified, secure, and ad-free sharing!",
     link: "https://tini.fyi/from-portfolio",
+    role: "Creator and full-stack engineer",
+    stack: ["Next.js", "TypeScript", "Cloudflare"],
+    summary: "I designed and built a privacy-friendly URL shortener, then improved its redirect reliability and latency as usage grew.",
+    article: "/blog/you-cant-make-link-shortner-service-fast",
   },
   {
+    slug: "personal-website",
     name: "suresh.im",
     description: "Personal site - Showcase your work with simplicity!",
     link: "https://github.com/impoiler/suresh.im",
+    role: "Designer and developer",
+    stack: ["Next.js", "TypeScript", "MDX", "Vercel"],
+    summary: "I built this site as a fast, accessible home for my experience, projects, and long-form writing, with HTML and Markdown representations.",
   },
   {
+    slug: "ip-info-site",
     name: "ip-info.site",
     description: "Fast, secure, reliable API for IP lookups.",
     link: "https://tini.fyi/ip-info",
+    role: "Creator and full-stack engineer",
+    stack: ["TypeScript", "APIs", "Edge computing"],
+    summary: "I created a focused IP lookup API and web interface with an emphasis on fast responses and a small surface area.",
   },
   {
+    slug: "developer-tools",
     name: "tools(💩)",
     description:
       "Your all-in-one toolbox with image to base64, domain tools, IP checker, and more!",
     link: "https://tools.suresh.im",
+    role: "Creator",
+    stack: ["React", "TypeScript", "Web APIs"],
+    summary: "I assembled frequently needed browser-based developer utilities into a single lightweight toolbox.",
   },
   {
+    slug: "poiler-utils",
     name: "@poiler/utils",
     description: "React hooks and utility functions to make your life easier",
     link: "https://www.npmjs.com/package/@poiler/utils",
+    role: "Package author",
+    stack: ["React", "TypeScript", "npm"],
+    summary: "I published reusable hooks and utilities extracted from recurring needs in my React projects.",
   },
   {
+    slug: "vani-club",
     name: "vani.club",
     description:
       "YouTube team collaboration, direct uploads, and AI magic for effortless content creation!",
     link: "https://vani-club.vercel.app",
     inactive: true,
+    role: "Creator and full-stack engineer",
+    stack: ["Next.js", "YouTube API", "AI"],
+    summary: "I explored a collaborative workflow for YouTube teams, including uploads and AI-assisted content operations.",
   },
   {
+    slug: "section-fyi",
     name: "section.fyi",
     description:
       "Build a custom page with multiple links for effortless online presence!",
     link: "https://section.fyi",
     inactive: true,
+    role: "Creator",
+    stack: ["Next.js", "TypeScript"],
+    summary: "I built a customizable link-in-bio page product and learned from taking a small product from idea to deployment.",
   },
 ];
 
@@ -106,7 +136,7 @@ export const experiences = [
     location: "Pune, India",
     positions: [
       {
-        name: "Founding FullStack Developer",
+        name: "Founding Full-Stack Engineer",
         fromToTill: "Jan 2024",
         type: "Full-Time",
         notes: [
@@ -120,7 +150,7 @@ export const experiences = [
     location: "Remote, India",
     positions: [
       {
-        name: "FullStack Engineer",
+        name: "Full-Stack Engineer",
         fromToTill: "Jul 2023 - Jan 2024",
         type: "Full-Time",
         notes: [

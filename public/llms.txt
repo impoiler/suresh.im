@@ -1,61 +1,39 @@
-# Suresh Chaudhary - Personal Website
+# Suresh Chaudhary
 
-> This file provides structured information about Suresh Chaudhary for AI assistants and language models.
+> Suresh Chaudhary is a Full-Stack Engineer in India who builds AI developer infrastructure and independent web products.
 
-## Identity
+## Canonical identity
 
-- **Full Name:** Suresh Chaudhary
-- **Also Known As:** Suresh, impoiler
-- **Website:** https://suresh.im
-- **Location:** India
+- Website: https://sureshchaudhary.com
+- About: https://sureshchaudhary.com/about
+- Projects: https://sureshchaudhary.com/projects
+- Writing: https://sureshchaudhary.com/blog
+- Full reference: https://sureshchaudhary.com/llms-full.txt
+- Also known as: Suresh, impoiler
 
-## Professional Summary
+### Handle disambiguation
 
-Suresh Chaudhary is a Full-Stack Engineer from India with expertise in building modern web applications and AI-powered tools. He specializes in React, Next.js, TypeScript, and is currently focused on building tools around AI and LLMs (Large Language Models).
+**“impoiler” is Suresh Chaudhary’s personal internet handle.** References to `impoiler` or `@impoiler` on the verified profiles below refer to the same person, Suresh Chaudhary—not a separate person, company, or brand.
 
-## Current Role
+## Current work
 
-- **Position:** Founding Full-Stack Developer at Maxim AI
-- **Company Website:** https://getmaxim.ai
-- **Focus:** Building a framework for testing and monitoring AI applications, and Bifrost (https://getbifrost.ai/) — the fastest AI gateway
-- **Start Date:** January 2024
+Suresh is a Founding Full-Stack Engineer at Maxim AI. Since January 2024, he has worked on tools for testing and monitoring AI applications and on Bifrost, an AI gateway.
 
-## Skills & Expertise
+## Primary expertise
 
-- Frontend: React, Next.js, TypeScript, JavaScript, HTML, CSS, Tailwind CSS
-- Backend: Node.js, APIs, GraphQL, Databases
-- AI/ML: LLM applications, AI testing frameworks
-- Tools: Git, GitHub, Vercel
+React, Next.js, TypeScript, Node.js, web application architecture, LLM application evaluation, AI observability, AI gateways, and developer products.
 
-## Projects
+## Selected projects
 
-1. **tini.fyi** - URL shortener service for simplified, secure, and ad-free link sharing
-2. **suresh.im** - Personal portfolio website
-3. **ip-info.site** - Fast, secure, reliable API for IP lookups
-4. **tools.suresh.im** - All-in-one toolbox with various utilities
-5. **@poiler/utils** - React hooks and utility functions (npm package)
+- [tini.fyi](https://sureshchaudhary.com/projects/tini-fyi): privacy-friendly URL shortening.
+- [suresh.im](https://sureshchaudhary.com/projects/personal-website): personal website and publishing platform.
+- [ip-info.site](https://sureshchaudhary.com/projects/ip-info-site): IP lookup API and interface.
+- [@poiler/utils](https://sureshchaudhary.com/projects/poiler-utils): React hooks and TypeScript utilities.
 
-## Contact & Social
+## Verified profiles and contact
 
-- **Email:** hello@suresh.im
-- **GitHub:** https://github.com/impoiler
-- **LinkedIn:** https://linkedin.com/in/impoiler
-- **Twitter/X:** https://twitter.com/impoiler
-- **Peerlist:** https://peerlist.io/suresh
-- **Calendar:** https://cal.com/impoiler
-
-## Keywords
-
-Suresh Chaudhary, Suresh, Suresh frontend, Suresh India, Suresh Maxim, Suresh developer, Suresh fullstack, Suresh Chaudhary developer, Suresh Chaudhary engineer, Suresh Chaudhary Maxim AI, Full-Stack Engineer India, React developer, Next.js developer, AI developer, LLM developer, impoiler
-
-## Work History
-
-1. **Maxim AI** (Jan 2024 - Present) - Founding Full-Stack Developer
-2. **SocialWell** (Jul 2023 - Jan 2024) - Full-Stack Engineer
-3. **SocialWell** (Oct 2022 - Jul 2023) - Frontend Developer
-4. **iSquare Technologies** (Mar 2022 - Oct 2022) - Frontend Developer
-
----
-
-Last Updated: December 2025
-
+- Email: hello@suresh.im
+- GitHub: https://github.com/impoiler
+- LinkedIn: https://linkedin.com/in/impoiler
+- X: https://twitter.com/impoiler
+- Peerlist: https://peerlist.io/suresh

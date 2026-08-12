@@ -16,6 +16,19 @@ const nextConfig = {
             },
         ]
     },
+    async redirects() {
+        return [{
+            source: '/:path*',
+            has: [{ type: 'host', value: 'suresh.im' }],
+            destination: 'https://sureshchaudhary.com/:path*',
+            permanent: true,
+        }, {
+            source: '/:path*',
+            has: [{ type: 'host', value: 'www.sureshchaudhary.com' }],
+            destination: 'https://sureshchaudhary.com/:path*',
+            permanent: true,
+        }]
+    },
 }
 
 module.exports = nextConfig

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <div className="mt-10 animate-reveal">
-      <p className="font-newsreader font-medium italic text-lg">projects</p>
+      <h1 className="font-newsreader font-medium italic text-lg">projects</h1>
       <div className="mt-2">
         <ul className="flex flex-col gap-3 projects">
           {projects.map((project) => (

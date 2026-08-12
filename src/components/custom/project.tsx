@@ -1,10 +1,10 @@
 import { projects } from "@/constant/data";
 import Link from "./link";
 
-export default function Project(project: (typeof projects)[0]) {
+export default function Project(project: (typeof projects)[0] & { internal?: boolean }) {
   return (
     <li key={project.name} className="flex flex-col">
-      <Link href={project.link} className="text-sm out font-medium">
+      <Link href={project.internal ? `/projects/${project.slug}` : project.link} className="text-sm out font-medium">
         {project.name}
         {project.inactive && (
           <span className="text-secondary"> (inactive)</span>

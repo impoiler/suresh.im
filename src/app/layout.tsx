@@ -61,12 +61,10 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // Add your verification codes here when you have them
-    // google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
-  },
-  other: {
-    "msvalidate.01": "", // Add Bing verification when available
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? { "msvalidate.01": [process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION] }
+      : undefined,
   },
 };
 
@@ -78,7 +76,7 @@ const jsonLd = {
       "@type": "Person",
       "@id": `${externals.base_url}/#person`,
       name: externals.fullName,
-      alternateName: ["Suresh", "impoiler"],
+      alternateName: ["Suresh", externals.handle, `@${externals.handle}`],
       description:
         "Full-Stack Engineer from India, currently building AI testing tools at Maxim AI. Specializing in React, Next.js, and LLM applications.",
       url: externals.base_url,
@@ -128,21 +126,6 @@ const jsonLd = {
       },
       inLanguage: "en-US",
     },
-    {
-      "@type": "ProfilePage",
-      "@id": `${externals.base_url}/#profilepage`,
-      url: externals.base_url,
-      name: externals.fullName,
-      isPartOf: {
-        "@id": `${externals.base_url}/about`,
-      },
-      about: {
-        "@id": `${externals.base_url}/about`,
-      },
-      mainEntity: {
-        "@id": `${externals.base_url}/#person`,
-      },
-    },
   ],
 };
 
@@ -170,12 +153,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <link rel="canonical" href={externals.base_url} />
         <meta name="author" content={externals.fullName} />
-        <meta
-          name="google-site-verification"
-          content=""
-        />
       </head>
       <body className={`${newsreader.variable} antialiased py-8 px-4`}>
         <div
