@@ -15,6 +15,8 @@ export interface BlogFrontmatter {
   description: string;
   date: string;
   published: boolean;
+  updated?: string;
+  image?: string;
 }
 
 export interface Blog extends BlogFrontmatter {
@@ -35,11 +37,13 @@ export function getAllBlogs(): Blog[] {
 
       return {
         slug,
-        url: `blog/${slug}`,
+        url: `/blog/${slug}`,
         title: data.title,
         description: data.description,
         date: data.date,
         published: data.published ?? true,
+        updated: data.updated,
+        image: data.image,
         content,
       } as Blog;
     });
@@ -55,11 +59,13 @@ export function getBlogBySlug(slug: string): Blog | null {
 
     return {
       slug,
-      url: `blog/${slug}`,
+      url: `/blog/${slug}`,
       title: data.title,
       description: data.description,
       date: data.date,
       published: data.published ?? true,
+      updated: data.updated,
+      image: data.image,
       content,
     } as Blog;
   } catch {
@@ -108,4 +114,3 @@ export async function serializeMDX(content: string) {
     mdxOptions,
   });
 }
-

@@ -40,6 +40,16 @@ function yearOf(fromToTill: string) {
 }
 
 export default function AboutPage() {
+  const profileJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${externals.base_url}/about#profilepage`,
+    url: `${externals.base_url}/about`,
+    name: `About ${externals.fullName}`,
+    isPartOf: { "@id": `${externals.base_url}/#website` },
+    about: { "@id": `${externals.base_url}/#person` },
+    mainEntity: { "@id": `${externals.base_url}/#person` },
+  };
   const coords: Array<{ label: string; href: string; external?: boolean }> = [
     { label: "email", href: Links.email },
     { label: "github", href: Links.github, external: true },
@@ -51,6 +61,7 @@ export default function AboutPage() {
 
   return (
     <main className="mt-12 pb-24">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd) }} />
       {/* ── masthead ─────────────────────────────────────── */}
       <section
         className="animate-reveal"

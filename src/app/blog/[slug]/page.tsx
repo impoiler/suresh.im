@@ -1,15 +1,14 @@
 import BlogContent from "@/components/custom/blog-content";
-import EmptyPlaceholder from "@/components/custom/empty-placeholder";
 import Link from "@/components/custom/link";
 import { externals } from "@/constant/data";
 import { getAllBlogs, getBlogBySlug, serializeMDX } from "@/lib/mdx";
 import { formatDate } from "@/lib/utils";
-import { ArrowLeft, NotebookPen } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-  return getAllBlogs().map((post) => ({
+  return getAllBlogs().filter((post) => post.published).map((post) => ({
     slug: post.slug,
   }));
 }
@@ -22,11 +21,13 @@ export async function generateMetadata(
   const params = await props.params;
   const post = getBlogBySlug(params.slug);
 
-  if (!post) {
+  if (!post || !post.published) {
     return notFound();
   }
 
-  const { title, description, date, url } = post;
+  const { title, description, date } = post;
+  const canonical = `${externals.base_url}/blog/${post.slug}`;
+  const image = post.image ?? "/og.png";
   
   return {
     title: `${title} | Blog`,
@@ -43,18 +44,19 @@ export async function generateMetadata(
       description,
       type: "article",
       publishedTime: date,
-      url: `${externals.base_url}/blog/${url}`,
+      url: canonical,
       authors: [externals.fullName],
-      images: [`/blog/${post.slug}.png`, "/og.png"],
+      images: [image],
     },
     twitter: {
       card: "summary_large_image",
       title: `${title} - ${externals.fullName}`,
       description,
       creator: "@impoiler",
+      images: [image],
     },
     alternates: {
-      canonical: `${externals.base_url}/blog/${url}`,
+      canonical,
     },
   };
 }
@@ -63,24 +65,29 @@ const PostLayout = async (props: { params: Promise<{ slug: string }> }) => {
   const params = await props.params;
   const post = getBlogBySlug(params.slug);
 
-  if (!post) {
+  if (!post || !post.published) {
     notFound();
   }
 
-  if (post.published === false) {
-    return (
-      <EmptyPlaceholder
-        title="Post is not published yet."
-        icon={<NotebookPen size={50} />}
-        description={"Please check back later."}
-      />
-    );
-  }
-
   const mdxSource = await serializeMDX(post.content);
+  const canonical = `${externals.base_url}/blog/${post.slug}`;
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    url: canonical,
+    mainEntityOfPage: canonical,
+    datePublished: post.date,
+    ...(post.updated ? { dateModified: post.updated } : {}),
+    image: `${externals.base_url}${post.image ?? "/og.png"}`,
+    author: { "@id": `${externals.base_url}/#person` },
+    publisher: { "@id": `${externals.base_url}/#person` },
+  };
 
   return (
     <div className="mt-7 animate-reveal">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <header className="flex text-secondary justify-between items-center py-3 sticky top-0 bg-background">
         <Link
           href={"/blog"}

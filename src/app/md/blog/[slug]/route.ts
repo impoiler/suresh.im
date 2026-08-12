@@ -4,7 +4,7 @@ import { formatDate } from "@/lib/utils";
 export const dynamic = "force-static";
 
 export function generateStaticParams() {
-  return getAllBlogs().map((post) => ({ slug: post.slug }));
+  return getAllBlogs().filter((post) => post.published).map((post) => ({ slug: post.slug }));
 }
 
 export async function GET(

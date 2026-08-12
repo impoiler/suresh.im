@@ -34,7 +34,10 @@ export default function Home() {
 
   return (
     <>
-      <p className="text-sm animate-reveal text-secondary mt-10">
+      <h1 className="mt-10 font-newsreader text-2xl font-medium italic animate-reveal">
+        Suresh Chaudhary — Full-Stack Engineer building AI developer tools
+      </h1>
+      <p className="text-sm animate-reveal text-secondary mt-4">
         I&apos;m a{" "}
         <span className="font-newsreader text-primary font-medium italic mr-0.5">
           full-stack engineer

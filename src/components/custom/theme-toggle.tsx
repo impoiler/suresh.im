@@ -24,7 +24,8 @@ export default function ThemeToggle() {
     const theme = getThemeFromCookie();
     if (theme) {
       document.documentElement.setAttribute("data-theme", theme);
-      setCurrentTheme(theme);
+      const frame = requestAnimationFrame(() => setCurrentTheme(theme));
+      return () => cancelAnimationFrame(frame);
     }
   }, []);
 

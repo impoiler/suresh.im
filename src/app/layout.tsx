@@ -1,4 +1,5 @@
 import Navbar from "@/components/custom/navbar";
+import Footer from "@/components/custom/footer";
 import { externals } from "@/constant/data";
 import { Analytics } from "@vercel/analytics/react";
 import { GeistMono } from "geist/font/mono";
@@ -61,12 +62,10 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // Add your verification codes here when you have them
-    // google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
-  },
-  other: {
-    "msvalidate.01": "", // Add Bing verification when available
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? { "msvalidate.01": [process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION] }
+      : undefined,
   },
 };
 
@@ -128,21 +127,6 @@ const jsonLd = {
       },
       inLanguage: "en-US",
     },
-    {
-      "@type": "ProfilePage",
-      "@id": `${externals.base_url}/#profilepage`,
-      url: externals.base_url,
-      name: externals.fullName,
-      isPartOf: {
-        "@id": `${externals.base_url}/about`,
-      },
-      about: {
-        "@id": `${externals.base_url}/about`,
-      },
-      mainEntity: {
-        "@id": `${externals.base_url}/#person`,
-      },
-    },
   ],
 };
 
@@ -170,12 +154,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <link rel="canonical" href={externals.base_url} />
         <meta name="author" content={externals.fullName} />
-        <meta
-          name="google-site-verification"
-          content=""
-        />
       </head>
       <body className={`${newsreader.variable} antialiased py-8 px-4`}>
         <div
@@ -183,6 +162,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
+          <Footer />
           <Analytics mode="production" />
         </div>
       </body>
