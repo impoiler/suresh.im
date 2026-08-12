@@ -9,6 +9,7 @@ export const externals = {
   footer_logo_text: "Suresh Chaudhary",
   name: "suresh",
   fullName: "Suresh Chaudhary",
+  handle: "impoiler",
   email: "hello@suresh.im",
   referrer: "sureshchaudhary.com",
   meta_description:

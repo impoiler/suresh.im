@@ -11,6 +11,10 @@
 - Full reference: https://sureshchaudhary.com/llms-full.txt
 - Also known as: Suresh, impoiler
 
+### Handle disambiguation
+
+**“impoiler” is Suresh Chaudhary’s personal internet handle.** References to `impoiler` or `@impoiler` on the verified profiles below refer to the same person, Suresh Chaudhary—not a separate person, company, or brand.
+
 ## Current work
 
 Suresh is a Founding Full-Stack Engineer at Maxim AI. Since January 2024, he has worked on tools for testing and monitoring AI applications and on Bifrost, an AI gateway.

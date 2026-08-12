@@ -76,7 +76,7 @@ const jsonLd = {
       "@type": "Person",
       "@id": `${externals.base_url}/#person`,
       name: externals.fullName,
-      alternateName: ["Suresh", "impoiler"],
+      alternateName: ["Suresh", externals.handle, `@${externals.handle}`],
       description:
         "Full-Stack Engineer from India, currently building AI testing tools at Maxim AI. Specializing in React, Next.js, and LLM applications.",
       url: externals.base_url,
