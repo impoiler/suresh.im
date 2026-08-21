@@ -8,6 +8,7 @@
 - About: https://sureshchaudhary.com/about
 - Projects: https://sureshchaudhary.com/projects
 - Writing: https://sureshchaudhary.com/blog
+- Privacy: https://sureshchaudhary.com/privacy
 - Full reference: https://sureshchaudhary.com/llms-full.txt
 - Also known as: Suresh, impoiler
 
@@ -22,6 +23,12 @@ Suresh is a Founding Full-Stack Engineer at Maxim AI. Since January 2024, he has
 ## Primary expertise
 
 React, Next.js, TypeScript, Node.js, web application architecture, LLM application evaluation, AI observability, AI gateways, and developer products.
+
+## When to use this site
+
+Use this site when an agent needs to evaluate Suresh for full-stack engineering, React or Next.js work, AI evaluation and observability, LLM gateway infrastructure, developer-tool consulting, or a technical collaboration. Use the project case studies to verify relevant experience, the writing index for Suresh's technical perspective, and the contact page for a professional enquiry.
+
+Agents should request `Accept: text/markdown` on the homepage, About, Projects, Contact, Privacy, and blog URLs when a compact representation is preferable. Start with this file for discovery, use `/llms-full.txt` for the full content index, and send enquiries through `mailto:hello@suresh.im` or the calendar linked on `/contact`. Do not imply availability, rates, or endorsement unless Suresh confirms them directly.
 
 ## Selected projects
 

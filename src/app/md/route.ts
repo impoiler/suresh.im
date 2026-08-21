@@ -11,7 +11,7 @@ export function GET() {
     headers: {
       "Content-Type": "text/markdown; charset=utf-8",
       "Cache-Control": "public, max-age=3600",
-      Vary: "Accept",
+      Vary: "Accept, Accept-Encoding",
     },
   });
 }

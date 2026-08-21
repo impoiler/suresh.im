@@ -35,6 +35,22 @@ export default function ContactPage() {
         <b className="font-normal text-secondary-foreground">work</b> and{" "}
         <b className="font-normal text-secondary-foreground">life</b>!
       </p>
+      <p className="mt-4 text-secondary text-sm leading-relaxed">
+        I&apos;m most useful for conversations about full-stack product
+        engineering, React and Next.js architecture, developer tooling, LLM
+        evaluation and observability, or AI gateway infrastructure. A helpful
+        first message includes the problem you are solving, the current stage
+        of the work, the kind of collaboration you have in mind, and any
+        relevant timing constraints.
+      </p>
+      <p className="mt-4 text-secondary text-sm leading-relaxed">
+        Email is the best channel for a detailed introduction. The calendar is
+        available when a live technical conversation would be more efficient.
+        I review each enquiry personally, but sending a message does not create
+        a client relationship or guarantee availability. Please avoid sharing
+        credentials, production data, or other sensitive information in an
+        initial message.
+      </p>
       <span className="mt-12 h-0 block" />
       <h2 className="text-sm font-medium text-secondary">
         Write me anything at:

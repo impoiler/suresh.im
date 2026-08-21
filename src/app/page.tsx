@@ -81,7 +81,7 @@ export default function Home() {
 
       <div className="flex flex-col gap-10 mt-10 animate-reveal">
         <div>
-          <p className="font-newsreader font-medium italic text-lg">projects</p>
+          <h2 className="font-newsreader font-medium italic text-lg">projects</h2>
           <div className="mt-3">
             <ul className="flex flex-col projects gap-3">
               {projects.slice(0, 5).map((project) => (
@@ -96,7 +96,7 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <p className="font-newsreader font-medium italic text-lg">thoughts</p>
+          <h2 className="font-newsreader font-medium italic text-lg">thoughts</h2>
           <div className="mt-3">
             <ul className="blog-articles flex flex-col gap-3">
               {posts.slice(0, 4).map((blog) => (
