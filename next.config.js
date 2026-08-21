@@ -12,7 +12,14 @@ const nextConfig = {
         return [
             {
                 source: '/',
-                headers: [{ key: 'Link', value: linkHeader }],
+                headers: [
+                    { key: 'Link', value: linkHeader },
+                    { key: 'Vary', value: 'Accept, Accept-Encoding' },
+                ],
+            },
+            {
+                source: '/(about|projects|contact|privacy|blog/:path*)',
+                headers: [{ key: 'Vary', value: 'Accept, Accept-Encoding' }],
             },
         ]
     },

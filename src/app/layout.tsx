@@ -126,6 +126,28 @@ const jsonLd = {
       },
       inLanguage: "en-US",
     },
+    {
+      "@type": "Organization",
+      "@id": `${externals.base_url}/#organization`,
+      name: `${externals.fullName} — Independent Software Engineering`,
+      url: externals.base_url,
+      logo: `${externals.base_url}/og.png`,
+      email: externals.email,
+      founder: { "@id": `${externals.base_url}/#person` },
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "professional enquiries",
+        email: externals.email,
+        url: `${externals.base_url}/contact`,
+        availableLanguage: ["English", "Hindi"],
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Pune",
+        addressCountry: "IN",
+      },
+      sameAs: [externals.social.github, externals.social.linkedin],
+    },
   ],
 };
 
