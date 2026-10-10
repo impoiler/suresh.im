@@ -37,34 +37,34 @@ export default function Home() {
       <h1 className="sr-only">Suresh — full-stack engineer</h1>
       <p className="text-sm animate-reveal text-secondary mt-10">
         I&apos;m a{" "}
-        <span className="font-newsreader text-primary font-medium italic mr-0.5">
+        <span className="accent">
           full-stack engineer
         </span>{" "}
-        from India, crafting things for the internet using the technologies I
-        know. I&apos;m currently focused on building tools around AI and LLMs.
+        from India. I build tools for developers working with AI and LLMs.
       </p>
 
-      <p className="text-sm text-secondary animate-reveal mt-4">
-        Presently, I&apos;m working at{" "}
-        <Link
-          target="_blank"
-          href={externals.compony.site}
-          className="font-newsreader text-primary out font-medium italic"
-        >
-          {externals.compony.name}{" "}
-        </Link>
-        , building a framework for testing and monitoring AI applications and{" "}
+      <p className="text-sm text-secondary animate-reveal mt-4" style={{ animationDelay: "100ms" }}>
+        Currently working on{" "}
         <Link
           target="_blank"
           href="https://getbifrost.ai/"
-          className="font-newsreader text-primary out font-medium italic"
+          className="accent"
         >
           Bifrost
         </Link>
-        , the fastest AI gateway.
+        , the fastest AI gateway in the market, and previously on an evaluation
+        platform for AI agents and applications, at{" "}
+        <Link
+          target="_blank"
+          href={externals.compony.site}
+          className="accent"
+        >
+          {externals.compony.name}
+        </Link>
+        .
       </p>
 
-      <div className="animate-reveal mt-4 space-y-3">
+      <div className="animate-reveal mt-4 space-y-3" style={{ animationDelay: "200ms" }}>
         <div className="flex items-center gap-2">
           <p className="text-sm text-secondary">Want to chat?</p>
           <Link
@@ -79,8 +79,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-10 mt-10 animate-reveal">
-        <div>
+      <div className="flex flex-col gap-10 mt-10">
+        <div className="animate-reveal" style={{ animationDelay: "320ms" }}>
           <h2 className="font-newsreader font-medium italic text-lg">projects</h2>
           <div className="mt-3">
             <ul className="flex flex-col projects gap-3">
@@ -95,7 +95,7 @@ export default function Home() {
             </ul>
           </div>
         </div>
-        <div>
+        <div className="animate-reveal" style={{ animationDelay: "420ms" }}>
           <h2 className="font-newsreader font-medium italic text-lg">thoughts</h2>
           <div className="mt-3">
             <ul className="blog-articles flex flex-col gap-3">

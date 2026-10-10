@@ -43,6 +43,31 @@ html::-webkit-scrollbar-button {
   display: none;
 }
 
+/* Keyword emphasis inside body text: darker and medium weight against the
+   grey body copy. Links add a thin underline that fills in on hover. */
+.accent {
+  color: hsl(var(--primary));
+  font-weight: 500;
+}
+
+a.accent {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: hsl(var(--primary) / 0.35);
+  transition: text-decoration-color 0.2s;
+}
+
+a.accent:hover {
+  text-decoration-color: hsl(var(--primary));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-reveal {
+    animation: none;
+  }
+}
+
 a.out {
   position: relative;
   text-decoration: none;
